@@ -512,10 +512,31 @@
       justify-content: space-between;
       align-items: center;
     }
-  </style>
+/* Language Switcher */
+.lang-switch {
+  text-align: right;
+  padding: 0.6rem 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  font-size: 0.9rem;
+}
+
+.lang-switch a {
+  color: var(--accent);
+  text-decoration: none;
+  margin: 0 0.3rem;
+  font-weight: 600;
+}
+
+.lang-switch a:hover {
+  text-decoration: underline;
+}  </style>
 </head>
 <body>
-
+<div class="lang-switch">
+  <a href="index.html">RU</a> |
+  <a href="en.html">EN</a> |
+  <a href="he.html">HE</a>
+</div>
 <header>
   <!-- Top mini bar -->
   <div class="topbar">
