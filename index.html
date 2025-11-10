@@ -1,562 +1,785 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Move 4 U – הובלות ברמה אחרת בכל ישראל</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta
-    name="description"
-    content="הובלות דירות, משרדים וציוד עסקי בכל רחבי ישראל – בצורה בטוחה, נקייה ומדויקת. צוות קטן ואכפתי, פירוק והרכבה של רהיטים ושירות בעברית וברוסית."
-  />
-
+  <meta charset="UTF-8">
+  <title>Move4U – Moving & Transportation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Move4U – professional moving and transportation services all over Israel. Careful movers, fair prices, full service.">
   <style>
     :root {
-      --bg-dark: #020617;
-      --bg-dark-2: #020617;
-      --primary: #fbbf24;
-      --primary-dark: #d97706;
-      --accent: #22c55e;
-      --text-main: #f9fafb;
-      --text-muted: #9ca3af;
-      --card-bg: rgba(15, 23, 42, 0.92);
-      --card-border: rgba(148, 163, 184, 0.35);
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.75);
-      --radius-xl: 28px;
-      --radius-lg: 18px;
+      --accent: #007b7f;
+      --accent-light: #e0f4f5;
+      --text: #222;
+      --muted: #666;
+      --bg: #ffffff;
+      --section-bg: #fafafa;
+      --border: #e3e3e3;
+      --radius: 999px;
+      --shadow-soft: 0 8px 20px rgba(0,0,0,0.06);
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-        sans-serif;
-      color: var(--text-main);
-      background:
-        radial-gradient(circle at top left, #1f2937 0, rgba(15, 23, 42, 0) 55%),
-        radial-gradient(circle at bottom right, #0f766e 0, rgba(15, 23, 42, 0) 55%),
-        linear-gradient(to bottom, #020617 0, #020617 70%, #000 100%);
-      min-height: 100vh;
-    }
-
-    .page {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 16px 16px 40px;
-    }
-
-    /* Top info strip */
-    .top-strip {
-      font-size: 13px;
-      color: var(--text-muted);
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 4px;
-      padding: 6px 4px 10px;
-    }
-
-    .top-strip strong {
-      color: var(--primary);
-      font-weight: 600;
-    }
-
-    .top-strip a {
-      color: var(--text-main);
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    /* Header */
-    .header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 10px 14px;
-      margin-bottom: 18px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: 0 14px 38px rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(18px);
-      position: sticky;
-      top: 8px;
-      z-index: 20;
-    }
-
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
-      background: radial-gradient(circle at 30% 20%, #facc15, #f97316);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      box-shadow: 0 10px 22px rgba(234, 179, 8, 0.6);
-    }
-
-    .logo-text-main {
-      font-weight: 800;
-      letter-spacing: 0.02em;
-      font-size: 18px;
-    }
-
-    .logo-text-sub {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    .header-badge {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12);
-      color: #bbf7d0;
-      border: 1px solid rgba(34, 197, 94, 0.5);
-      white-space: nowrap;
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      margin-top: 8px;
-      margin-bottom: 24px;
-      padding: 20px 14px 28px;
-      border-radius: 32px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at top left, rgba(248, 250, 252, 0.08) 0, transparent 55%),
-        radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.2) 0, transparent 55%),
-        linear-gradient(135deg, #020617 0, #020617 45%, #0b1120 100%);
-      box-shadow: var(--shadow-soft);
-    }
-
-    .hero::before {
-      /* лёгкая полупрозрачная “дорога” */
-      content: "";
-      position: absolute;
-      inset: 40% -40%;
-      background: radial-gradient(circle at center, rgba(15, 23, 42, 0) 0, rgba(15, 23, 42, 0.95) 70%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-    }
-
-    .truck-emoji {
-      position: absolute;
-      bottom: 10px;
-      left: 12px;
-      font-size: 30px;
-      animation: drive 12s linear infinite;
-      opacity: 0.9;
-    }
-
-    @keyframes drive {
-      0% {
-        transform: translateX(0);
-      }
-      50% {
-        transform: translateX(55vw);
-      }
-      100% {
-        transform: translateX(0);
-      }
-    }
-
-    .hero-card {
-      border-radius: 30px;
-      padding: 20px 18px 22px;
-      background: linear-gradient(
-          to bottom,
-          rgba(15, 23, 42, 0.96),
-          rgba(15, 23, 42, 0.94)
-        );
-      border: 1px solid var(--card-border);
-      box-shadow: 0 20px 45px rgba(15, 23, 42, 0.9);
-      color: var(--text-main);
-    }
-
-    .hero-kicker {
-      font-size: 13px;
-      color: var(--primary);
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-
-    .hero-title {
-      font-size: 26px;
-      margin: 0 0 6px;
-    }
-
-    .hero-subtitle {
-      font-size: 15px;
-      color: var(--text-muted);
-      margin-bottom: 10px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      color: var(--text);
+      background: var(--bg);
       line-height: 1.6;
     }
 
-    .hero-bullets {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 14px;
-      font-size: 14px;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .hero-bullets li::before {
-      content: "•";
-      margin-left: 6px;
-      color: var(--primary);
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
 
-    .hero-badge-row {
+    /* Layout */
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 3.5rem 0;
+    }
+
+    @media (min-width: 900px) {
+      section {
+        padding: 4.5rem 0;
+      }
+    }
+
+    /* Header / Hero */
+
+    header {
+      position: relative;
+      color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 80vh;
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      align-items: center;
-      margin-bottom: 16px;
-      font-size: 12px;
-    }
-
-    .hero-badge-main {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(34, 197, 94, 0.12);
-      border: 1px solid rgba(34, 197, 94, 0.6);
-      color: #bbf7d0;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .hero-badge-main span {
-      font-size: 14px;
-    }
-
-    .hero-badge-sub {
-      color: var(--text-muted);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-
-    .btn {
-      flex: 1 1 140px;
-      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      padding: 11px 12px;
-      border-radius: 999px;
-      font-size: 14px;
-      font-weight: 600;
-      border: none;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease,
-        background 0.15s ease;
-      white-space: nowrap;
+      text-align: left;
+      overflow: hidden;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color: #111827;
-      box-shadow: 0 14px 30px rgba(250, 204, 21, 0.45);
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.15));
+      z-index: 1;
     }
 
-    .btn-primary:active {
-      transform: translateY(1px);
-      box-shadow: 0 8px 18px rgba(250, 204, 21, 0.4);
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      filter: brightness(0.9);
     }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--text-main);
-      border: 1px solid rgba(148, 163, 184, 0.7);
+    .hero__content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
     }
 
-    .btn-outline:active {
-      transform: translateY(1px);
-      box-shadow: 0 8px 18px rgba(15, 23, 42, 0.9);
-      background: rgba(15, 23, 42, 0.7);
+    .hero__inner {
+      max-width: 600px;
     }
 
-    .hero-phone-note {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    .hero-phone-note strong {
-      color: var(--text-main);
-    }
-
-    /* Sections */
-    .section {
-      margin-bottom: 26px;
-      padding: 18px 16px 20px;
-      border-radius: var(--radius-xl);
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: 0 14px 34px rgba(15, 23, 42, 0.9);
-    }
-
-    .section-title {
-      font-size: 20px;
-      margin: 0 0 8px;
-      color: #e5e7eb;
-    }
-
-    .section-subtitle {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin-bottom: 14px;
-    }
-
-    .chip-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 10px;
-    }
-
-    .chip {
-      font-size: 13px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.55);
-      color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.9);
+    .hero__badge {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
+      gap: 0.5rem;
+      padding: 0.25rem 0.9rem;
+      border-radius: var(--radius);
+      background: rgba(0,0,0,0.35);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.9rem;
     }
 
-    .chip span {
-      font-size: 14px;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 10px;
-      margin-top: 8px;
-    }
-
-    .step-card {
-      padding: 10px 10px 11px;
-      border-radius: var(--radius-lg);
-      background: radial-gradient(circle at top, rgba(248, 250, 252, 0.04), transparent 60%),
-        rgba(15, 23, 42, 0.9);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-    }
-
-    .step-title {
-      font-size: 14px;
-      margin: 0 0 4px;
-      color: #e5e7eb;
-    }
-
-    .step-text {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    /* Footer */
-    .footer {
-      margin-top: 10px;
-      padding: 12px 8px 4px;
-      font-size: 12px;
-      color: var(--text-muted);
-      text-align: center;
-    }
-
-    .footer strong {
-      color: var(--text-main);
-    }
-
-    .footer a {
-      color: var(--primary);
-      text-decoration: none;
+    .hero__title {
+      font-size: 2.2rem;
+      font-weight: 650;
+      margin-bottom: 0.5rem;
     }
 
     @media (min-width: 768px) {
-      .page {
-        padding: 22px 18px 44px;
+      .hero__title {
+        font-size: 3rem;
       }
+    }
 
-      .hero {
-        padding: 26px 24px 32px;
-      }
+    .hero__subtitle {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      max-width: 480px;
+    }
 
-      .hero-card {
-        max-width: 680px;
-      }
+    .hero__line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+    }
 
-      .hero-title {
-        font-size: 30px;
-      }
+    .hero__phone {
+      font-weight: 600;
+    }
 
-      .hero-subtitle {
-        font-size: 16px;
-      }
+    .hero__buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
 
-      .section {
-        padding: 20px 22px 22px;
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius);
+      padding: 0.7rem 1.6rem;
+      border: 1px solid transparent;
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: var(--shadow-soft);
+      background: #fff;
+      color: var(--accent);
+    }
+
+    .btn--primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+
+    .btn--ghost {
+      background: rgba(0,0,0,0.25);
+      color: #fff;
+      border-color: rgba(255,255,255,0.4);
+      box-shadow: none;
+    }
+
+    .btn--primary:hover {
+      background: #00646a;
+      border-color: #00646a;
+    }
+
+    .btn--ghost:hover {
+      background: rgba(0,0,0,0.45);
+    }
+
+    .hero__note {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.82);
+    }
+
+    /* Simple top bar */
+
+    .topbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+    }
+
+    .topbar__inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 1.5rem;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .topbar__phone {
+      font-size: 0.85rem;
+      background: rgba(0,0,0,0.5);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius);
+    }
+
+    /* Sections */
+
+    .section--alt {
+      background: var(--section-bg);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 1.7rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      max-width: 620px;
+      margin: 0 auto 2rem;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    /* About / Text + Image */
+
+    .split {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .split {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
       }
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+      color: var(--muted);
+    }
+
+    .bullets {
+      list-style: none;
+      margin-top: 0.5rem;
+    }
+
+    .bullets li {
+      margin-bottom: 0.45rem;
+      padding-left: 1.2rem;
+      position: relative;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .bullets li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+    }
+
+    /* Price list */
+
+    .price-list {
+      max-width: 720px;
+      margin: 0 auto;
+      border-radius: 1.25rem;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .price-header {
+      background: var(--accent-light);
+      padding: 1.1rem 1.4rem;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.8rem 1.4rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.95rem;
+    }
+
+    .price-row:nth-child(even) {
+      background: #fcfcfc;
+    }
+
+    .price-row span:last-child {
+      font-weight: 600;
+    }
+
+    /* Gallery */
+
+    .gallery-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .gallery-item {
+      border-radius: 0.75rem;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Contact / Hours */
+
+    .contact-grid {
+      display: grid;
+      gap: 2rem;
+    }
+
+    @media (min-width: 900px) {
+      .contact-grid {
+        grid-template-columns: 1.4fr 1fr;
+        align-items: start;
+      }
+    }
+
+    .card {
+      border-radius: 1.1rem;
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      background: #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .card h3 {
+      margin-bottom: 0.7rem;
+      font-size: 1.1rem;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-top: 0.6rem;
+      font-size: 0.95rem;
+    }
+
+    .contact-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .hours-table {
+      margin-top: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .hours-table div {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Forms */
+
+    .form {
+      display: grid;
+      gap: 0.9rem;
+      margin-top: 0.6rem;
+    }
+
+    .form-row {
+      display: grid;
+      gap: 0.9rem;
+    }
+
+    @media (min-width: 700px) {
+      .form-row {
+        grid-template-columns: repeat(2, minmax(0,1fr));
+      }
+    }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 0.2rem;
+      font-weight: 500;
+    }
+
+    input, textarea {
+      width: 100%;
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 0.6rem 0.75rem;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(0,123,127,0.16);
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    /* Subscribe band */
+
+    .subscribe-band {
+      background: var(--accent);
+      color: #fff;
+      padding: 2.2rem 0;
+      margin-top: 1.5rem;
+    }
+
+    .subscribe-inner {
+      display: grid;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 900px) {
+      .subscribe-inner {
+        grid-template-columns: 1.3fr 1fr;
+      }
+    }
+
+    .subscribe-title {
+      font-size: 1.35rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .subscribe-text {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.88);
+    }
+
+    .subscribe-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .subscribe-form input {
+      border-radius: var(--radius);
+      flex: 1;
+      min-width: 0;
+      border: none;
+    }
+
+    .subscribe-form .btn {
+      box-shadow: none;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 2rem 0 1.7rem;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: space-between;
+      align-items: center;
     }
   </style>
 </head>
-
 <body>
-  <div class="page">
-    <!-- верхняя строка -->
-    <div class="top-strip">
-      <div>
-        הובלות בכל הארץ • שירות בעברית וברוסית
-      </div>
-      <div>
-        <strong>טלפון:</strong>
-        <a href="tel:0547524092">054-752-4092</a>
+
+<header>
+  <!-- Top mini bar -->
+  <div class="topbar">
+    <div class="topbar__inner container">
+      <div class="logo">Move4U</div>
+      <div class="topbar__phone">✆ +972 54-752-4092</div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <div class="hero">
+    <!-- ЗАМЕНИ КАРТИНКУ НА СВОЮ (фото твоей машины и семьи) -->
+    <img class="hero__bg" src="https://images.pexels.com/photos/4246239/pexels-photo-4246239.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Family moving house with boxes">
+
+    <div class="container hero__content">
+      <div class="hero__inner">
+        <div class="hero__badge">
+          Reliable Moving & Transportation
+        </div>
+        <h1 class="hero__title">Transportation on another level</h1>
+        <p class="hero__subtitle">
+          Move4U – аккуратные переезды по всему Израилю: квартиры, офисы, склады. Мы относимся к вашим вещам как к своим.
+        </p>
+
+        <div class="hero__line">
+          <span class="hero__phone">☎ +972 54-752-4092</span>
+          <span>·</span>
+          <span>Open today: 09:00 – 17:00</span>
+        </div>
+
+        <div class="hero__buttons">
+          <a href="#contact" class="btn btn--primary">Book Today</a>
+          <a href="#prices" class="btn btn--ghost">Get a Free Quote</a>
+        </div>
+
+        <div class="hero__note">
+          Serving Gush Dan & all of Israel · Apartment moves · Office moves · Piano & heavy items
+        </div>
       </div>
     </div>
+  </div>
+</header>
 
-    <!-- шапка -->
-    <header class="header">
-      <div class="logo-wrap">
-        <div class="logo-icon">🚚</div>
-        <div>
-          <div class="logo-text-main">MOVE 4 U</div>
-          <div class="logo-text-sub">הובלות ברמה אחרת</div>
-        </div>
-      </div>
-      <div class="header-badge">
-        ✔ הובלות ערב/לילה בתיאום
-      </div>
-    </header>
+<main>
 
-    <!-- hero -->
-    <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-card">
-          <div class="hero-kicker">הובלות כמו שצריך – כאילו זה הבית שלי</div>
-          <h1 class="hero-title">הובלות ברמה אחרת</h1>
-          <p class="hero-subtitle">
-            דירות, משרדים וציוד עסקי בכל רחבי ישראל – בצורה בטוחה,
-            נקייה ומדויקת. צוות קטן, אכפתי ומקצועי שמלווה אתכם
-            מהשיחה הראשונה ועד הכנסת הקרטון האחרון.
-          </p>
-
-          <ul class="hero-bullets">
-            <li>עטיפת רהיטים ושמירה על הרצפה והקירות</li>
-            <li>פירוק והרכבת רהיטים לפי הצורך</li>
-            <li>אפשרות להובלה מהירה בהתראה קצרה</li>
-            <li>שירות אישי, זמין וסבלני בעברית וברוסית</li>
-          </ul>
-
-          <div class="hero-badge-row">
-            <div class="hero-badge-main">
-              <span>★</span> לקוחות חוזרים ממליצים
-            </div>
-            <div class="hero-badge-sub">
-              מגיעים בזמן, מסיימים נקי וללא הפתעות במחיר.
-            </div>
-          </div>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/972547524092" target="_blank" rel="noopener">
-              WhatsApp להזמנה מהירה
-            </a>
-            <a class="btn btn-outline" href="tel:0547524092">
-              התקשר עכשיו ☎
-            </a>
-          </div>
-
-          <div class="hero-phone-note">
-            <strong>טלפון ישיר:</strong> 054-752-4092 – אפשר גם לשלוח הודעה
-            קצרה ב-WhatsApp ונחזור אליך.
-          </div>
-        </div>
-
-        <div class="truck-emoji">🚛</div>
-      </div>
-    </section>
-
-    <!-- услуги -->
-    <section class="section">
-      <h2 class="section-title">איזה סוג הובלה אתם צריכים?</h2>
+  <!-- About us / Experience -->
+  <section id="about" class="section--alt">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
       <p class="section-subtitle">
-        מתאימים את עצמנו אליכם – בלי “חבילות” מיותרות. רק מה שבאמת צריך
-        להובלה בטוחה ונעימה.
+        Experienced professionals you can trust with your belongings. Family-owned moving company based in Ramat-Gan.
       </p>
 
-      <div class="chip-row">
-        <div class="chip"><span>🏠</span> הובלת דירות וכלי בית</div>
-        <div class="chip"><span>🏢</span> הובלת משרדים וציוד עסקי</div>
-        <div class="chip"><span>🛏️</span> פירוק והרכבת רהיטים</div>
-        <div class="chip"><span>📦</span> הובלות קטנות ונקודתיות</div>
-      </div>
-    </section>
+      <div class="split">
+        <div>
+          <p class="lead">
+            We know moving can be stressful. Our job is to make it easy, safe and on time. From careful packing to
+            unloading at your new home, Move4U stays with you at every step.
+          </p>
+          <ul class="bullets">
+            <li>Professional movers with years of experience</li>
+            <li>Clean trucks and all necessary equipment (belts, blankets, carts)</li>
+            <li>Full protection of furniture and appliances</li>
+            <li>Local and long-distance moves around Israel</li>
+          </ul>
+        </div>
 
-    <!-- как это работает -->
-    <section class="section">
-      <h2 class="section-title">איך זה עובד?</h2>
-      <div class="steps">
-        <div class="step-card">
-          <h3 class="step-title">1. שיחה קצרה</h3>
-          <p class="step-text">
-            מספרים לנו מאיפה לאיפה, איזה קומה, האם יש מעלית ומה צריך להעביר.
-          </p>
-        </div>
-        <div class="step-card">
-          <h3 class="step-title">2. הצעת מחיר ברורה</h3>
-          <p class="step-text">
-            מחיר סגור מראש – בלי הפתעות. אפשרות להובלה גם בשעות ערב/לילה.
-          </p>
-        </div>
-        <div class="step-card">
-          <h3 class="step-title">3. מגיעים בזמן</h3>
-          <p class="step-text">
-            צוות קטן ומקצועי שמגיע בזמן, עוטף, מגן ומעמיס בצורה מסודרת.
-          </p>
-        </div>
-        <div class="step-card">
-          <h3 class="step-title">4. מסיימים נקי</h3>
-          <p class="step-text">
-            פורקים לפי הבקשה שלכם, מרכיבים רהיטים ומשאירים בית מסודר.
-          </p>
+        <div>
+          <!-- Заменишь на своё фото -->
+          <img src="https://images.pexels.com/photos/7464700/pexels-photo-7464700.jpeg?auto=compress&cs=tinysrgb&w=1600"
+               alt="Movers loading boxes into truck">
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- footer -->
-    <footer class="footer">
-      <div>
-        <strong>Move 4 U – הובלות בכל ישראל</strong><br />
-        טלפון / WhatsApp:
-        <a href="tel:0547524092">054-752-4092</a>
+  <!-- Customer Satisfaction -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Customer Satisfaction Guaranteed</h2>
+      <p class="section-subtitle">
+        Combining reliable trucks, professional movers and friendly service, we provide top quality moving for
+        residential and commercial clients. Warranty included with all services.
+      </p>
+
+      <div class="gallery-grid" style="margin-top:1.5rem;">
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/7464374/pexels-photo-7464374.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Couple with moving boxes">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/7464398/pexels-photo-7464398.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Movers with boxes">
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.pexels.com/photos/7464434/pexels-photo-7464434.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Packed cardboard boxes">
+        </div>
       </div>
-      <div style="margin-top:6px;">
-        שירות בעברית וברוסית • הובלות כאילו זה הבית שלנו.
+    </div>
+  </section>
+
+  <!-- Finding the Right Service -->
+  <section class="section--alt">
+    <div class="container">
+      <h2 class="section-title">Finding the Right Service</h2>
+      <p class="section-subtitle">
+        Not sure what exactly you need? Call us, and we’ll help you choose the right truck size and number of movers
+        so you don’t overpay.
+      </p>
+
+      <div class="split">
+        <div>
+          <p class="lead">
+            We provide a free phone consultation to plan your move. Tell us where from, where to, which floor, elevator
+            or not — and we calculate everything in advance.
+          </p>
+          <ul class="bullets">
+            <li>Apartment & house moves</li>
+            <li>Office & commercial moves</li>
+            <li>Single-item transport (fridge, piano, furniture)</li>
+            <li>Packing & unpacking service on request</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://images.pexels.com/photos/7464408/pexels-photo-7464408.jpeg?auto=compress&cs=tinysrgb&w=1600"
+               alt="Mover carrying rolled carpet">
+        </div>
       </div>
-    </footer>
+    </div>
+  </section>
+
+  <!-- Price list -->
+  <section id="prices">
+    <div class="container">
+      <h2 class="section-title">Menu / Price List</h2>
+      <p class="section-subtitle">
+        Every move is different, but here are starting prices so you know what to expect. For a precise quote,
+        contact us and we’ll calculate according to your details.
+      </p>
+
+      <div class="price-list">
+        <div class="price-header">Typical Moves (from prices)</div>
+        <div class="price-row">
+          <span>Studio / 1-room apartment (same city)</span>
+          <span>from 500 ₪</span>
+        </div>
+        <div class="price-row">
+          <span>2–3 room apartment</span>
+          <span>from 900 ₪</span>
+        </div>
+        <div class="price-row">
+          <span>4+ room apartment / private house</span>
+          <span>from 1,500 ₪</span>
+        </div>
+        <div class="price-row">
+          <span>Office moves (per project)</span>
+          <span>by quote</span>
+        </div>
+        <div class="price-row">
+          <span>Single item (fridge, washing machine, etc.)</span>
+          <span>from 250 ₪</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Hours -->
+  <section id="contact" class="section--alt">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-subtitle">
+        We stay in constant communication with our customers until the job is done. To get a free quote, or if you have
+        questions or special requests, just drop us a line or call.
+      </p>
+
+      <div class="contact-grid">
+        <!-- Contact form -->
+        <div class="card">
+          <h3>Get a Free Quote</h3>
+          <p class="muted">Send us a few details about your move and we’ll call you back as soon as possible.</p>
+
+          <!-- mailto: можно заменить на обработчик на сервере -->
+          <form class="form" action="mailto:info@move4u.co.il" method="post" enctype="text/plain">
+            <div class="form-row">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="Name" required>
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="Phone" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div>
+                <label for="from">From (city)</label>
+                <input id="from" name="From">
+              </div>
+              <div>
+                <label for="to">To (city)</label>
+                <input id="to" name="To">
+              </div>
+            </div>
+
+            <div>
+              <label for="date">Preferred moving date</label>
+              <input id="date" name="Date" type="date">
+            </div>
+
+            <div>
+              <label for="message">Additional details</label>
+              <textarea id="message" name="Details" placeholder="Floor, elevator, number of rooms, special items…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary">Send Request</button>
+          </form>
+        </div>
+
+        <!-- Info / hours -->
+        <div class="card">
+          <h3>Move4U</h3>
+          <p class="muted">משמר הירדן 7, רמת גן, ישראל</p>
+
+          <ul class="contact-list">
+            <li>Phone: <a href="tel:+972547524092">+972 54-752-4092</a></li>
+            <li>Email: <a href="mailto:info@move4u.co.il">info@move4u.co.il</a></li>
+          </ul>
+
+          <h3 style="margin-top:1.4rem;">Hours</h3>
+          <div class="hours-table muted">
+            <div><span>Sunday – Thursday</span><span>09:00 – 17:00</span></div>
+            <div><span>Friday</span><span>09:00 – 13:00</span></div>
+            <div><span>Saturday</span><span>Closed</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe band -->
+  <section class="subscribe-band">
+    <div class="container">
+      <div class="subscribe-inner">
+        <div>
+          <h3 class="subscribe-title">Subscribe</h3>
+          <p class="subscribe-text">
+            Sign up for updates, seasonal deals and moving tips. We send only useful information, no spam.
+          </p>
+        </div>
+        <form class="subscribe-form">
+          <input type="email" placeholder="your@email.com" required>
+          <button class="btn btn--primary" type="submit">Sign Up</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>Copyright © 2025 Move4U – All rights reserved.</div>
+    <div>Powered by Move4U · <a href="mailto:info@move4u.co.il">info@move4u.co.il</a></div>
   </div>
+</footer>
+
 </body>
 </html>
