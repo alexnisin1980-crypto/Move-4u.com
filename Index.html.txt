@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <title>Move 4 U - הובלות ברמה אחרת</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5f2ea;
+      color: #222;
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    .wrapper {
+      max-width: 900px;
+      width: 100%;
+      padding: 20px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 28px 24px 32px;
+      text-align: center;
+    }
+    .logo {
+      font-size: 30px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+    .logo span {
+      color: #c89a2b; /* золотистый */
+    }
+    .tagline-he {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      direction: rtl;
+    }
+    .tagline-ru {
+      font-size: 15px;
+      color: #555;
+      margin-bottom: 22px;
+    }
+    .services {
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 22px;
+      direction: rtl;
+    }
+    .phone {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .btn {
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-call {
+      background: #c89a2b;
+      color: #fff;
+    }
+    .btn-wa {
+      background: #ffffff;
+      border: 1px solid #c89a2b;
+      color: #c89a2b;
+    }
+    .footer-note {
+      font-size: 12px;
+      color: #777;
+      direction: rtl;
+    }
+    @media (max-width: 600px) {
+      .card { padding: 24px 18px; }
+      .logo { font-size: 24px; }
+      .tagline-he { font-size: 19px; }
+      .phone { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card">
+      <div class="logo"><span>Move</span> 4 U</div>
+      <div class="tagline-he">הובלות ברמה אחרת</div>
+      <div class="tagline-ru">Переезды по всему Израилю — надёжно, аккуратно, как для себя.</div>
+
+      <div class="services">
+        • הובלות דירות וכלי בית<br>
+        • הובלות משרדים וציוד עסקי<br>
+        • פירוק והרכבת רהיטים לפי הצורך<br>
+        • שירות אישי, זמין וסבלני
+      </div>
+
+      <div class="phone">📞 054-752-4092</div>
+
+      <div class="buttons">
+        <a class="btn btn-call" href="tel:+972547524092">התקשר עכשיו</a>
+        <a class="btn btn-wa" href="https://wa.me/972547524092" target="_blank">
+          WhatsApp להזמנה מהירה
+        </a>
+      </div>
+
+      <div class="footer-note">
+        נותנים שירות בכל גוש דן והסביבה · אפשרות לשירות בכל הארץ בתיאום מראש
+      </div>
+    </div>
+  </div>
+</body>
+</html>
