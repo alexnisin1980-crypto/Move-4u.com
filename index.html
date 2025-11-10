@@ -1,128 +1,370 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8" />
-  <title>Move 4 U - הובלות ברמה אחרת</title>
+  <title>Move 4 U – הובלות ברמה אחרת</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="הובלות דירות, משרדים וציוד עסקי בכל רחבי ישראל. Move 4 U – הובלות ברמה אחרת, שירות אישי ואמין." />
+
   <style>
+    :root {
+      --bg: #f4efe6;
+      --card: #ffffff;
+      --primary: #c59629;
+      --primary-dark: #a57710;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #f5f2ea;
-      color: #222;
-      display: flex;
+      background: var(--bg);
+      color: var(--text-main);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
+
+    .hero {
       min-height: 100vh;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 960px;
+      background: var(--card);
+      border-radius: 24px;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.12);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-top {
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 12px;
+      background: #111827;
+      display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 18px;
+      color: #facc15;
     }
-    .wrapper {
-      max-width: 900px;
-      width: 100%;
-      padding: 20px;
-    }
-    .card {
-      background: #ffffff;
-      border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      padding: 28px 24px 32px;
-      text-align: center;
-    }
-    .logo {
-      font-size: 30px;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      margin-bottom: 8px;
-    }
-    .logo span {
-      color: #c89a2b; /* золотистый */
-    }
-    .tagline-he {
-      font-size: 22px;
-      font-weight: 600;
-      margin-bottom: 6px;
-      direction: rtl;
-    }
-    .tagline-ru {
-      font-size: 15px;
-      color: #555;
-      margin-bottom: 22px;
-    }
-    .services {
+
+    .hero-contact-mini {
+      display: none;
       font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 22px;
-      direction: rtl;
+      color: var(--text-muted);
     }
-    .phone {
-      font-size: 20px;
-      font-weight: 600;
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+      gap: 24px;
+      padding: 24px 24px 28px;
+    }
+
+    /* LEFT COLUMN – text */
+
+    .hero-text h1 {
+      margin: 0 0 8px;
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--primary-dark);
+    }
+
+    .hero-text h2 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .hero-text p.lead {
+      margin: 0 0 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      font-size: 15px;
+    }
+
+    .hero-list {
+      margin: 0 0 18px;
+      padding-right: 18px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .hero-list li::marker {
+      color: var(--primary);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
       margin-bottom: 18px;
     }
-    .buttons {
+
+    .badge {
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3f4f6;
+      color: #374151;
+    }
+
+    /* CTA BUTTONS */
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      justify-content: center;
-      margin-bottom: 10px;
+      align-items: center;
     }
+
     .btn {
-      padding: 10px 18px;
       border-radius: 999px;
+      padding: 10px 18px;
       border: none;
       font-size: 15px;
+      font-weight: 600;
       cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+      white-space: nowrap;
     }
-    .btn-call {
-      background: #c89a2b;
-      color: #fff;
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 10px 25px rgba(180, 125, 28, 0.4);
     }
-    .btn-wa {
-      background: #ffffff;
-      border: 1px solid #c89a2b;
-      color: #c89a2b;
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 14px 35px rgba(180, 125, 28, 0.45);
     }
-    .footer-note {
+
+    .btn-outline {
+      border: 1px solid var(--primary);
+      color: var(--primary-dark);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: #fff7e6;
+    }
+
+    .hero-phone {
+      margin-top: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-phone span {
+      direction: ltr;
+    }
+
+    /* RIGHT COLUMN – info card */
+
+    .hero-card {
+      background: #f9fafb;
+      border-radius: 20px;
+      padding: 18px 18px 16px;
+      border: 1px solid #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13px;
+      color: #4b5563;
+    }
+
+    .hero-card-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .hero-card-label {
+      font-weight: 600;
+      color: #111827;
+    }
+
+    .hero-card-chip {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #e5e7eb;
       font-size: 12px;
-      color: #777;
-      direction: rtl;
     }
-    @media (max-width: 600px) {
-      .card { padding: 24px 18px; }
-      .logo { font-size: 24px; }
-      .tagline-he { font-size: 19px; }
-      .phone { font-size: 18px; }
+
+    .hero-card-note {
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.5;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      text-align: center;
+      padding: 14px 10px 4px;
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .footer a {
+      color: #9ca3af;
+      text-decoration: underline;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      .hero-inner {
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        padding: 18px 16px 20px;
+      }
+
+      .hero-text h1 {
+        font-size: 24px;
+      }
+
+      .hero-text h2 {
+        font-size: 20px;
+      }
+
+      .hero-contact-mini {
+        display: block;
+      }
+
+      .hero-phone {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="card">
-      <div class="logo"><span>Move</span> 4 U</div>
-      <div class="tagline-he">הובלות ברמה אחרת</div>
-      <div class="tagline-ru">Переезды по всему Израилю — надёжно, аккуратно, как для себя.</div>
 
-      <div class="services">
-        • הובלות דירות וכלי בית<br>
-        • הובלות משרדים וציוד עסקי<br>
-        • פירוק והרכבת רהיטים לפי הצורך<br>
-        • שירות אישי, זמין וסבלני
+  <main class="hero">
+    <section class="hero-inner">
+      <!-- TOP BAR -->
+      <header class="hero-top">
+        <div class="logo">
+          <div class="logo-icon">🚚</div>
+          <div>Move 4 U</div>
+        </div>
+        <div class="hero-contact-mini">
+          📞 <span dir="ltr">054-752-4092</span>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT -->
+      <div class="hero-content">
+        <!-- LEFT: TEXT -->
+        <div class="hero-text">
+          <h1>Move 4 U</h1>
+          <h2>הובלות ברמה אחרת</h2>
+          <p class="lead">
+            Переезды по всему Израилю — надёжно, аккуратно, как для себя.
+          </p>
+
+          <ul class="hero-list">
+            <li>הובלות דירות וכלי בית – разборка, упаковка, сборка.</li>
+            <li>הובלות משרדים וציוד עסקי – бережно и по графику.</li>
+            <li>פירוק והרכבת רהיטים לפי הצורך – шкафы, кухни, ארונות.</li>
+            <li>שירות אישי, זמין וסבלני – работаем аккуратно и вежливо.</li>
+          </ul>
+
+          <div class="hero-badges">
+            <div class="badge">שירות בכל רחבי הארץ</div>
+            <div class="badge">ביטוח אחריות מטען</div>
+            <div class="badge">ניסיון של שנים בהובלות</div>
+          </div>
+
+          <div class="hero-actions">
+            <!-- CALL BUTTON -->
+            <a class="btn btn-primary" href="tel:+972547524092">
+              📞 התקשר עכשיו
+            </a>
+
+            <!-- WHATSAPP BUTTON -->
+            <a class="btn btn-outline" href="https://wa.me/972547524092" target="_blank" rel="noopener">
+              💬 WhatsApp להודעה מהירה
+            </a>
+          </div>
+
+          <div class="hero-phone">
+            📞 טלפון: <span>054-752-4092</span>
+          </div>
+        </div>
+
+        <!-- RIGHT: INFO CARD -->
+        <aside class="hero-card">
+          <div class="hero-card-row">
+            <span class="hero-card-label">איזו הובלה אתה צריך?</span>
+            <span class="hero-card-chip">דירה / משרד / ציוד עסקי</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="hero-card-label">איפה?</span>
+            <span class="hero-card-chip">בכל רחבי ישראל</span>
+          </div>
+          <div class="hero-card-row">
+            <span class="hero-card-label">מתי?</span>
+            <span class="hero-card-chip">תיאום גמיש לפי הצורך</span>
+          </div>
+          <p class="hero-card-note">
+            השאר הודעה ב-WhatsApp או התקשר עכשיו, ונחזור אליך עם הצעת מחיר הוגנת,
+            לפי היקף ההובלה, מרחק ושירותים נלווים (אריזה, פירוק, אחסנה ועוד).
+          </p>
+        </aside>
       </div>
 
-      <div class="phone">📞 054-752-4092</div>
+      <!-- FOOTER -->
+      <footer class="footer">
+        © Move 4 U — הובלות דירות ומשרדים בכל רחבי ישראל.
+        האתר בפיתוח. ליצירת קשר מיידי: טלפון / WhatsApp.
+      </footer>
+    </section>
+  </main>
 
-      <div class="buttons">
-        <a class="btn btn-call" href="tel:+972547524092">התקשר עכשיו</a>
-        <a class="btn btn-wa" href="https://wa.me/972547524092" target="_blank">
-          WhatsApp להזמנה מהירה
-        </a>
-      </div>
-
-      <div class="footer-note">
-        נותנים שירות בכל גוש דן והסביבה · אפשרות לשירות בכל הארץ בתיאום מראש
-      </div>
-    </div>
-  </div>
 </body>
 </html>
