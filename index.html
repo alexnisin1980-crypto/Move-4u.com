@@ -1,127 +1,804 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Move 4 U – הובלות ברמה אחרת</title>
+  <meta name="description" content="Move 4 U – הובלות דירות, משרדים וציוד עסקי בכל הארץ. שירות אישי, אמין ומדויק. טלפון: 054-752-4092.">
   <style>
+    :root {
+      --bg: #f4efe6;
+      --card: #ffffff;
+      --primary: #c59629;
+      --primary-dark: #a57710;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --border-soft: #e5ded0;
+      --accent-soft: #fff6dd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #faf8f4;
-      color: #222;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #fff7e5 0, #f4efe6 45%, #ece3d5 100%);
+      color: var(--text-main);
       line-height: 1.6;
     }
 
-    header {
-      background-color: #f6d77a;
-      color: #000;
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Top bar */
+
+    .topbar {
+      background: #18181b;
+      color: #f9fafb;
+      font-size: 13px;
+      padding: 6px 16px;
       text-align: center;
-      padding: 25px 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      letter-spacing: 1px;
+    .topbar span {
+      opacity: 0.85;
     }
 
-    header p {
-      margin: 5px 0 0;
+    /* Header & hero */
+
+    header {
+      background: linear-gradient(120deg, #1f2933, #3b3b46);
+      color: #f9fafb;
+      padding: 18px 16px 40px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at top right, rgba(255, 210, 130, 0.35), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.18), transparent 60%);
+      opacity: 0.9;
+      z-index: 0;
+    }
+
+    .nav {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: radial-gradient(circle at 30% 30%, #ffe9a6, #c59629);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      box-shadow: 0 0 0 2px rgba(0,0,0,0.25), 0 7px 18px rgba(0,0,0,0.35);
+    }
+
+    .logo-text-main {
+      font-weight: 700;
+      letter-spacing: 0.08em;
       font-size: 18px;
     }
 
-    main {
-      display: flex;
-      flex-direction: column;
+    .logo-text-sub {
+      font-size: 12px;
+      opacity: 0.85;
+    }
+
+    .nav-links {
+      display: none;
+      gap: 16px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      opacity: 0.9;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
       align-items: center;
-      padding: 40px 20px;
+      padding: 0 4px;
     }
 
-    .card {
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      padding: 25px;
-      max-width: 420px;
-      text-align: center;
+    .hero-main-title {
+      font-size: 30px;
+      margin: 4px 0 10px;
     }
 
-    .card h2 {
-      color: #c59b32;
+    .hero-main-title span {
+      color: #ffd87a;
+    }
+
+    .hero-sub-title {
+      font-size: 17px;
       margin-bottom: 10px;
     }
 
-    .services {
-      text-align: right;
-      direction: rtl;
-      margin-top: 10px;
+    .hero-sub-ru {
       font-size: 15px;
+      opacity: 0.9;
+      margin-bottom: 18px;
     }
 
-    .phone {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 20px 0;
-    }
-
-    .buttons {
+    .hero-badges {
       display: flex;
-      gap: 10px;
-      justify-content: center;
       flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+      font-size: 12px;
+    }
+
+    .badge {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 999px;
+      padding: 6px 10px;
+      border: 1px solid rgba(249,250,251,0.08);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .badge span {
+      opacity: 0.95;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 12px;
     }
 
     .btn {
-      background-color: #c59b32;
-      color: white;
+      border-radius: 999px;
       padding: 10px 20px;
-      border-radius: 25px;
+      font-size: 14px;
+      font-weight: 600;
+      border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
       text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+      white-space: nowrap;
     }
 
-    .btn:hover {
-      background-color: #a98728;
+    .btn-primary {
+      background: linear-gradient(135deg, #ffd776, #c59629);
+      color: #1f1300;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
     }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 26px rgba(0,0,0,0.5);
+      background: linear-gradient(135deg, #ffe38f, #daaa2e);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #f9fafb;
+      border: 1px solid rgba(249,250,251,0.4);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .hero-phone {
+      font-size: 16px;
+      margin-top: 4px;
+      opacity: 0.96;
+    }
+
+    .hero-phone strong {
+      font-size: 18px;
+    }
+
+    .hero-tagline-small {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 4px;
+    }
+
+    .hero-visual {
+      align-self: stretch;
+    }
+
+    .card-hero {
+      background: radial-gradient(circle at top, #fff8e2, #f2e5cf 60%, #e2d3c1 100%);
+      border-radius: 22px;
+      padding: 20px 18px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.35);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-hero-title {
+      font-weight: 700;
+      color: #1f2933;
+      margin-bottom: 6px;
+      font-size: 18px;
+    }
+
+    .card-hero-list {
+      font-size: 13px;
+      margin: 8px 0 14px;
+    }
+
+    .card-hero-list p {
+      margin: 3px 0;
+    }
+
+    .card-hero-pill {
+      font-size: 11px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 999px;
+      padding: 4px 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .truck-emoji {
+      position: absolute;
+      left: 16px;
+      bottom: 18px;
+      font-size: 32px;
+      opacity: 0.9;
+    }
+
+    /* Main content wrapper */
+
+    .main-wrapper {
+      max-width: 1100px;
+      margin: 22px auto 40px;
+      padding: 0 16px;
+    }
+
+    section {
+      margin-bottom: 32px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .section-title span.icon {
+      font-size: 22px;
+    }
+
+    .section-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 18px;
+    }
+
+    /* Services cards */
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 18px;
+      padding: 16px 16px 14px;
+      border: 1px solid var(--border-soft);
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.13);
+    }
+
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 3px 9px;
+      margin-bottom: 6px;
+      color: #854d0e;
+    }
+
+    /* Why us */
+
+    .why-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+
+    .why-item {
+      background: rgba(255,255,255,0.8);
+      border-radius: 16px;
+      padding: 12px 14px;
+      border: 1px dashed var(--border-soft);
+      font-size: 13px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .why-item span.icon {
+      font-size: 20px;
+      margin-top: 2px;
+    }
+
+    .why-item strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    /* Steps */
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 10px;
+      font-size: 13px;
+    }
+
+    .step {
+      background: rgba(255,255,255,0.85);
+      border-radius: 16px;
+      padding: 12px 14px;
+      border: 1px solid var(--border-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step-num {
+      font-size: 11px;
+      background: #111827;
+      color: #f9fafb;
+      display: inline-flex;
+      padding: 3px 8px;
+      border-radius: 999px;
+      margin-bottom: 5px;
+      letter-spacing: 0.05em;
+    }
+
+    .step h3 {
+      margin: 0 0 4px;
+      font-size: 14px;
+    }
+
+    /* Contact */
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .contact-card {
+      background: #111827;
+      color: #f9fafb;
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.5);
+    }
+
+    .contact-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .contact-card p {
+      margin: 0 0 10px;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .contact-info {
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+
+    .contact-info p {
+      margin: 2px 0;
+    }
+
+    .contact-note {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .small-form {
+      background: rgba(255,255,255,0.96);
+      border-radius: 18px;
+      padding: 14px 16px 12px;
+      border: 1px solid var(--border-soft);
+      font-size: 13px;
+    }
+
+    .small-form-row {
+      margin-bottom: 8px;
+    }
+
+    .small-form label {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 12px;
+    }
+
+    .small-form input,
+    .small-form textarea {
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #d4c9b9;
+      padding: 7px 9px;
+      font: inherit;
+      resize: vertical;
+    }
+
+    .small-form textarea {
+      min-height: 70px;
+    }
+
+    .small-form button {
+      margin-top: 6px;
+      width: 100%;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffd776, #c59629);
+      border: none;
+      padding: 8px 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 7px 18px rgba(0,0,0,0.25);
+    }
+
+    .small-form button:hover {
+      background: linear-gradient(135deg, #ffe38f, #daaa2e);
+    }
+
+    /* Footer */
 
     footer {
-      margin-top: 40px;
-      text-align: center;
-      font-size: 13px;
-      color: #666;
+      border-top: 1px solid rgba(148, 124, 86, 0.35);
+      padding: 16px 16px 24px;
+      font-size: 12px;
+      color: #4b5563;
+      background: rgba(15, 23, 42, 0.97);
+      color: #e5e7eb;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .footer-inner a {
+      color: #e5e7eb;
+      opacity: 0.85;
+    }
+
+    .footer-inner a:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0,1fr);
+        padding-bottom: 16px;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      header {
+        padding-bottom: 28px;
+      }
+    }
+
+    @media (min-width: 720px) {
+      .nav-links {
+        display: flex;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Move 4 U 🚚</h1>
-    <p>הובלות ברמה אחרת | Переезды по всему Израилю</p>
-  </header>
+  <div class="topbar">
+    <span>הובלות בכל הארץ • שירות בעברית וברוסית • טלפון: 054-752-4092</span>
+  </div>
 
-  <main>
-    <div class="card">
-      <h2>שירותי הובלה</h2>
-      <div class="services">
-        <p>• הובלות דירות וכל בית </p>
-        <p>• הובלות משרדים וציוד עסקי</p>
-        <p>• פירוק והרכבת ריהוט לפי צורך</p>
-        <p>• שירות אישי וזמין בכל זמן</p>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-mark">🚚</div>
+        <div>
+          <div class="logo-text-main">MOVE 4 U</div>
+          <div class="logo-text-sub">הובלות ברמה אחרת</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">שירותים</a>
+        <a href="#whyus">למה אנחנו</a>
+        <a href="#steps">איך זה עובד</a>
+        <a href="#contact">צור קשר</a>
+      </nav>
+    </div>
+
+    <div class="hero">
+      <div>
+        <h1 class="hero-main-title">
+          הובלות <span>Move 4 U</span> – כאילו זה הבית שלי
+        </h1>
+        <div class="hero-sub-title">
+          דירות, משרדים וציוד עסקי בכל רחבי ישראל – בצורה בטוחה, נקייה ומדויקת.
+        </div>
+        <div class="hero-sub-ru">
+          Переезды по всему Израилю — аккуратно, надёжно и «как для себя».
+        </div>
+
+        <div class="hero-badges">
+          <div class="badge"><span>✔</span><span>פירוק והרכבת רהיטים</span></div>
+          <div class="badge"><span>✔</span><span>הובלות ערב/לילה בתיאום</span></div>
+          <div class="badge"><span>✔</span><span>שירות אישי בעברית וברוסית</span></div>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/972547524092">
+            💬 הזמנה ב-WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="tel:+972547524092">
+            ☎ התקשר עכשיו
+          </a>
+        </div>
+
+        <div class="hero-phone">
+          טלפון ישיר: <strong>054-752-4092</strong>
+        </div>
+        <div class="hero-tagline-small">
+          מתכננים לעבור? שלחו הודעה – נשמח לחזור אליכם עם הצעת מחיר מיידית.
+        </div>
       </div>
 
-      <div class="phone">📞 054-752-4092</div>
-
-      <div class="buttons">
-        <a href="https://wa.me/972547524092" class="btn">הזמנה ב-WhatsApp</a>
-        <a href="tel:+972547524092" class="btn">התקשר עכשיו</a>
+      <div class="hero-visual">
+        <div class="card-hero">
+          <div class="card-hero-title">הובלות ברמה אחרת</div>
+          <div class="card-hero-list">
+            <p>• עטיפת רהיטים ושמירה על הרצפה והקירות</p>
+            <p>• צוות קטן ואחראי – אנחנו עםכם מתחילת המעבר ועד סופו</p>
+            <p>• אפשרות להובלה מהירה בהתראה קצרה</p>
+          </div>
+          <div class="card-hero-pill">
+            ⭐ מעלות: אמינות • דיוק • יחס אישי
+          </div>
+          <div class="truck-emoji">🚛</div>
+        </div>
       </div>
     </div>
+  </header>
+
+  <main class="main-wrapper">
+    <!-- Services -->
+    <section id="services">
+      <div class="section-title">
+        <span class="icon">📦</span>
+        <span>שירותי הובלה</span>
+      </div>
+      <div class="section-sub">
+        התאמת ההובלה לצרכים שלכם – מדירת סטודנטים ועד משרד מלא.  
+        Подбираем решение «под ключ» — от маленькой квартиры до офиса.
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-tag">דירות ובתים</div>
+          <h3>הובלת דירות וכל תכולת הבית</h3>
+          <p>אריזה בסיסית, שמיכות, עטיפות, שמירה על הקירות והרצפה, פריקה למקומות המבוקשים בבית החדש.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag">עסקים ומשרדים</div>
+          <h3>הובלת משרדים וציוד עסקי</h3>
+          <p>פינוי מסודר של עמדות עבודה, מחשבים וציוד רגיש, מעבר בשעות נוחות לעסק.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag">פירוק והרכבה</div>
+          <h3>פירוק והרכבת רהיטים</h3>
+          <p>פירוק ארונות, מיטות ורהיטים גדולים והרכבתם מחדש בבית החדש, לפי הצורך.</p>
+        </div>
+        <div class="card">
+          <div class="card-tag">שירותים נוספים</div>
+          <h3>שירותים משלימים</h3>
+          <p>הובלות קטנות, פינוי פריטים בודדים, הובלת מכשירי חשמל ועוד – לפי תיאום מראש.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why us -->
+    <section id="whyus">
+      <div class="section-title">
+        <span class="icon">✅</span>
+        <span>למה לבחור ב-Move 4 U?</span>
+      </div>
+      <div class="why-list">
+        <div class="why-item">
+          <span class="icon">🤝</span>
+          <div>
+            <strong>יחס אישי מתחילת הדרך</strong>
+            <span>אתם מדברים עם אותו אדם מהשיחה הראשונה עד סוף ההובלה. בלי מוקדים ובלי „לדלג“ בין נציגים.</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="icon">🧼</span>
+          <div>
+            <strong>הקפדה על ניקיון וסדר</strong>
+            <span>שמיכות, עטיפות, כיסוי רהיטים ורצפה – כדי להשאיר את הדירה נקייה ומסודרת, גם כשמעבירים הכול.</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="icon">⏰</span>
+          <div>
+            <strong>דיוק בזמנים</strong>
+            <span>מגיעים בזמן שקבענו, עובדים בקצב נעים אך יעיל, בלי לחץ מיותר ובלי הפתעות.</span>
+          </div>
+        </div>
+        <div class="why-item">
+          <span class="icon">🌍</span>
+          <div>
+            <strong>שירות בעברית וברוסית</strong>
+            <span>Объясняем всё простым языком, помогаем спланировать переезд и не забыть важные детали.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Steps -->
+    <section id="steps">
+      <div class="section-title">
+        <span class="icon">🧭</span>
+        <span>איך זה עובד?</span>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">שלב 1</div>
+          <h3>שיחת היכרות קצרה</h3>
+          <p>מספרים לנו מה צריך להעביר, מאיפה ולאן, אם יש מעלית, חניה וכדומה – ומקבלים הערכת מחיר.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">שלב 2</div>
+          <h3>תיאום מועד ושעה</h3>
+          <p>קובעים יום ושעה שמתאימים לכם – בוקר, ערב ואפילו מוצאי שבת (בתיאום מראש).</p>
+        </div>
+        <div class="step">
+          <div class="step-num">שלב 3</div>
+          <h3>אריזה והובלה</h3>
+          <p>מגיעים בזמן, עוטפים, מעמיסים בזהירות ומובילים ליעד החדש, כולל פריקה מסודרת.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">שלב 4</div>
+          <h3>סיום רגוע ונקי</h3>
+          <p>בודקים יחד שכל הפריטים הגיעו בשלום, ללא שריטות וללא לכלוך מיותר.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="section-title">
+        <span class="icon">📞</span>
+        <span>צור קשר</span>
+      </div>
+      <div class="section-sub">
+        השאירו פרטים קצרים או שלחו הודעת WhatsApp – ונחזור אליכם עם הצעה מסודרת.  
+        Можно написать на русском – ответим и поможем всё организовать.
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-card">
+          <h3>בואו נתכנן יחד את ההובלה</h3>
+          <p>כמה פרטים קטנים יעזרו לנו לתת לכם הצעת מחיר שמתאימה בדיוק למעבר שלכם.</p>
+
+          <div class="contact-info">
+            <p>📞 טלפון: <strong>054-752-4092</strong></p>
+            <p>💬 WhatsApp: <a href="https://wa.me/972547524092" style="color:#f9fafb;text-decoration:underline;">לחצו לפתיחת צ׳אט</a></p>
+          </div>
+
+          <p class="contact-note">
+            עדיף לשלוח: כתובת ישנה וחדשה, קומה (עם/בלי מעלית) ותיאור קצר של התכולה.
+          </p>
+        </div>
+
+        <div class="small-form">
+          <form action="mailto:example@move-4u.com" method="post">
+            <div class="small-form-row">
+              <label>שם מלא / Имя</label>
+              <input type="text" name="name" placeholder="איך לפנות אליך?" />
+            </div>
+            <div class="small-form-row">
+              <label>טלפון לחזרה / Телефон</label>
+              <input type="tel" name="phone" placeholder="לדוגמה 054-0000000" />
+            </div>
+            <div class="small-form-row">
+              <label>פרטי ההובלה (קצר)</label>
+              <textarea name="details" placeholder="מאיפה לאן, דירה / משרד, קומה, מעלית וכדומה..."></textarea>
+            </div>
+            <button type="submit">שליחת פרטים במייל</button>
+            <p style="font-size:11px;margin-top:6px;color:#6b7280;">
+              * הטופס שולח מייל דרך תוכנת הדואר במכשיר שלך. אפשר גם פשוט לכתוב ב-WhatsApp.
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2025 Move 4 U | Все права защищены
+    <div class="footer-inner">
+      <div>© 2025 Move 4 U – הובלות ברמה אחרת. Все права защищены.</div>
+      <div>טלפון: <a href="tel:+972547524092">054-752-4092</a></div>
+    </div>
   </footer>
 </body>
 </html>
