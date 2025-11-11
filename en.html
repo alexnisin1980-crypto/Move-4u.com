@@ -2,22 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Move4U – Moving & Transportation in Israel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Move4U – careful moving all over Israel: apartments, offices, storage. We treat your belongings as our own.">
-  <link rel=
-
-
-      <link rel="stylesheet" href="style.css">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Move4U — reliable moving and transportation all over Israel.">
+  <title>Move4U — Moving & Transportation in Israel</title>
   <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      background: #fff;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+
     .logo {
       display: inline-flex;
       align-items: center;
       gap: 0.1em;
       font-weight: 700;
       letter-spacing: 0.06em;
-      font-family: 'Poppins', sans-serif;
+      margin-top: 40px;
       transition: all 0.3s ease;
     }
 
@@ -26,7 +30,7 @@
       background: linear-gradient(90deg, #00bfff, #00e6ff, #00ffff);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
       transition: all 0.6s ease;
     }
 
@@ -67,223 +71,30 @@
       text-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
       transform: scale(1.02);
     }
+
+    h1 {
+      margin-top: 15px;
+      font-size: 1.6em;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 10px auto;
+      line-height: 1.5;
+    }
   </style>
 </head>
-</head>
+
 <body>
-
-<header>
-  <div class="topbar">
-    <div class="topbar__inner container">
-      <div class="logo">
-  <span class="logo-big">M</span>
-  <span class="logo-wheel">O</span>
-  <span class="logo-small">ve</span>
-  <span class="logo-big">4U</span>
-</div>
-
-      <div style="display:flex; gap:0.6rem; align-items:center;">
-        <div class="lang-switch">
-          <a href="index.html">RU</a>
-          <span>|</span>
-          <a href="en.html" class="active">EN</a>
-          <span>|</span>
-          <a href="he.html">HE</a>
-        </div>
-        <div class="topbar__phone">✆ +972 54-752-4092</div>
-      </div>
-    </div>
+  <div class="logo">
+    <span class="logo-big">M</span>
+    <span class="logo-wheel">O</span>
+    <span class="logo-small">ve</span>
+    <span class="logo-big">4U</span>
   </div>
 
-  <div class="hero">
-    <img class="hero__bg" src="https://images.pexels.com/photos/4246239/pexels-photo-4246239.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Family moving">
-
-    <div class="container hero__content">
-      <div class="hero__inner">
-        <div class="hero__badge">
-          Reliable Moving &amp; Transportation
-        </div>
-        <h1 class="hero__title">Transportation on another level</h1>
-        <p class="hero__subtitle">
-          Move4U provides careful and reliable moves all over Israel – apartments, offices and storage. We treat your belongings as if they were our own.
-        </p>
-
-        <div class="hero__line">
-          <span class="hero__phone">☎ +972 54-752-4092</span>
-          <span>·</span>
-          <span>Open today: 09:00 – 17:00</span>
-        </div>
-
-        <div class="hero__buttons">
-          <a href="#contact" class="btn btn--primary">Book Today</a>
-          <a href="#prices" class="btn btn--ghost">Get a Free Quote</a>
-        </div>
-
-        <div class="hero__note">
-          Serving Gush Dan &amp; all of Israel · Apartment moves · Office moves · Piano &amp; heavy items
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section id="about" class="section--alt">
-    <div class="container">
-      <h2 class="section-title">About Us</h2>
-      <p class="section-subtitle">
-        Experienced professionals you can trust with your belongings. Family-owned moving company based in Ramat-Gan.
-      </p>
-
-      <div class="split">
-        <div>
-          <p class="lead">
-            We know moving can be stressful. Our job is to make it easy, safe and on time. From careful packing to unloading at your new home, Move4U is with you at every step.
-          </p>
-          <ul class="bullets">
-            <li>Professional movers with years of experience</li>
-            <li>Clean trucks and all necessary equipment (belts, blankets, dollies)</li>
-            <li>Full protection for furniture and appliances</li>
-            <li>Local and long-distance moves all around Israel</li>
-          </ul>
-        </div>
-
-        <div>
-          <img src="https://images.pexels.com/photos/7464700/pexels-photo-7464700.jpeg?auto=compress&cs=tinysrgb&w=1600"
-               alt="Movers loading boxes into truck">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section--alt" id="prices">
-    <div class="container">
-      <h2 class="section-title">Menu / Price List</h2>
-      <p class="section-subtitle">
-        Every move is different, but here are starting prices so you know what to expect. For an exact quote, contact us with your details.
-      </p>
-
-      <div class="price-list">
-        <div class="price-header">Typical moves (from)</div>
-        <div class="price-row">
-          <span>Studio / 1-room apartment (same city)</span>
-          <span>from 500 ₪</span>
-        </div>
-        <div class="price-row">
-          <span>2–3 room apartment</span>
-          <span>from 900 ₪</span>
-        </div>
-        <div class="price-row">
-          <span>4+ room apartment / house</span>
-          <span>from 1,500 ₪</span>
-        </div>
-        <div class="price-row">
-          <span>Office moves (per project)</span>
-          <span>by quote</span>
-        </div>
-        <div class="price-row">
-          <span>Single item (fridge, piano, etc.)</span>
-          <span>from 250 ₪</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="section--alt">
-    <div class="container">
-      <h2 class="section-title">Contact Us</h2>
-      <p class="section-subtitle">
-        We stay in constant communication with our customers until the job is done. For a free quote or any questions, just drop us a line or call.
-      </p>
-
-      <div class="contact-grid">
-        <div class="card">
-          <h3>Get a Free Quote</h3>
-          <p class="muted">Send us a few details about your move and we’ll call you back as soon as possible.</p>
-
-          <form class="form" action="mailto:info@move4u.co.il" method="post" enctype="text/plain">
-            <div class="form-row">
-              <div>
-                <label for="name">Name</label>
-                <input id="name" name="Name" required>
-              </div>
-              <div>
-                <label for="phone">Phone</label>
-                <input id="phone" name="Phone" required>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div>
-                <label for="from">From (city)</label>
-                <input id="from" name="From">
-              </div>
-              <div>
-                <label for="to">To (city)</label>
-                <input id="to" name="To">
-              </div>
-            </div>
-
-            <div>
-              <label for="date">Preferred moving date</label>
-              <input id="date" name="Date" type="date">
-            </div>
-
-            <div>
-              <label for="message">Additional details</label>
-              <textarea id="message" name="Details" placeholder="Floor, elevator, number of rooms, special items…"></textarea>
-            </div>
-
-            <button type="submit" class="btn btn--primary">Send Request</button>
-          </form>
-        </div>
-
-        <div class="card">
-          <h3>Move4U</h3>
-          <p class="muted">משמר הירדן 7, רמת גן, ישראל</p>
-
-          <ul class="contact-list">
-            <li>Phone: <a href="tel:+972547524092">+972 54-752-4092</a></li>
-            <li>Email: <a href="mailto:info@move4u.co.il">info@move4u.co.il</a></li>
-          </ul>
-
-          <h3 style="margin-top:1.4rem;">Hours</h3>
-          <div class="hours-table muted">
-            <div><span>Sunday – Thursday</span><span>09:00 – 17:00</span></div>
-            <div><span>Friday</span><span>09:00 – 13:00</span></div>
-            <div><span>Saturday</span><span>Closed</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="subscribe-band">
-    <div class="container">
-      <div class="subscribe-inner">
-        <div>
-          <h3 class="subscribe-title">Subscribe</h3>
-          <p class="subscribe-text">
-            Sign up for updates, seasonal deals and moving tips. We send only useful information, no spam.
-          </p>
-        </div>
-        <form class="subscribe-form">
-          <input type="email" placeholder="your@email.com" required>
-          <button class="btn btn--primary" type="submit">Sign Up</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container footer-inner">
-    <div>Copyright © 2025 Move4U – All rights reserved.</div>
-    <div>Powered by Move4U · <a href="mailto:info@move4u.co.il">info@move4u.co.il</a></div>
-  </div>
-</footer>
-
+  <h1>Transportation on another level</h1>
+  <p>Move4U provides careful and reliable moves all over Israel — apartments, offices and storage. We treat your belongings as if they were our own.</p>
+  <p>📞 +972 54-752-4092 · Open today: 09:00 – 17:00</p>
 </body>
 </html>
