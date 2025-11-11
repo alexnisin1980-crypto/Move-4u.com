@@ -5,7 +5,70 @@
   <title>Move4U – Moving & Transportation in Israel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Move4U – careful moving all over Israel: apartments, offices, storage. We treat your belongings as our own.">
-  <link rel="stylesheet" href="style.css">
+  <link rel=
+
+
+      <link rel="stylesheet" href="style.css">
+
+  <style>
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-family: 'Poppins', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    .logo-big {
+      font-size: 1.3em;
+      background: linear-gradient(90deg, #00bfff, #00e6ff, #00ffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+      transition: all 0.6s ease;
+    }
+
+    .logo-small {
+      font-size: 0.9em;
+      color: #333;
+      opacity: 0.9;
+    }
+
+    .logo-wheel {
+      width: 1.15em;
+      height: 1.15em;
+      border-radius: 50%;
+      border: 2px solid #00e6ff;
+      color: #00e6ff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7em;
+      animation: spin 4s linear infinite;
+      box-shadow: 0 0 8px rgba(0, 230, 255, 0.4);
+      transition: all 0.4s ease;
+    }
+
+    .logo:hover .logo-wheel {
+      animation-play-state: paused;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+      border-color: #00ffff;
+      transform: scale(1.1);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .logo:hover {
+      text-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
+      transform: scale(1.02);
+    }
+  </style>
+</head>
 </head>
 <body>
 
