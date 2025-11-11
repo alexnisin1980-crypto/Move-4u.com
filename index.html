@@ -1,187 +1,100 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Move4U — аккуратные переезды по всему Израилю: квартиры, офисы, склады. Надёжно, вовремя и с заботой." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Move4U — аккуратные переезды по всему Израилю: квартиры, офисы, склады.">
   <title>Move4U — Переезды по Израилю</title>
-  <link rel="stylesheet" href="style.css" />
-
   <style>
-    /* Language Switcher */
-    .lang-switch {
-      text-align: right;
-      padding: 0.6rem 1rem;
-      background: rgba(0, 0, 0, 0.05);
-      font-size: 0.9rem;
-    }
-    .lang-switch a {
-      color: var(--accent);
-      text-decoration: none;
-      margin: 0 0.3rem;
-      font-weight: 600;
-    }
-    .lang-switch a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      background: rgba(0, 0, 0, 0.4);
-      color: white;
+    body {
+      font-family: 'Poppins', sans-serif;
       text-align: center;
-      padding: 6rem 1rem 3rem;
-      background-image: url('https://images.unsplash.com/photo-1600353060957-1f7f6d6b80f1?auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      position: relative;
-    }
-
-    header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      max-width: 600px;
-      margin: 0 auto 1.2rem;
-      color: #f0f0f0;
-    }
-
-    .btn-primary, .btn-secondary {
-      display: inline-block;
-      margin: 0.4rem;
-      padding: 0.8rem 1.5rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-    }
-
-    .btn-secondary {
-      border: 2px solid var(--accent);
-      color: var(--accent);
-    }
-
-    section {
-      padding: 3rem 1rem;
-      text-align: center;
-      background: var(--bg);
-    }
-
-    .section--alt {
-      background: var(--section-bg);
-    }
-
-    h2.section-title {
-      margin-bottom: 1rem;
-      font-size: 1.8rem;
-    }
-
-    .bullets {
-      list-style: none;
+      background: #fff;
+      color: #222;
+      margin: 0;
       padding: 0;
-      max-width: 600px;
-      margin: 1.5rem auto;
-      text-align: left;
     }
 
-    .bullets li {
-      margin-bottom: 0.6rem;
-      position: relative;
-      padding-left: 1.2rem;
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-top: 40px;
+      transition: all 0.3s ease;
     }
 
-    .bullets li::before {
-      content: "✔";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
+    .logo-big {
+      font-size: 1.3em;
+      background: linear-gradient(90deg, #00bfff, #00e6ff, #00ffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
+      transition: all 0.6s ease;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #f4f4f4;
-      font-size: 0.9rem;
-      color: #555;
+    .logo-small {
+      font-size: 0.9em;
+      color: #333;
+      opacity: 0.9;
+    }
+
+    .logo-wheel {
+      width: 1.15em;
+      height: 1.15em;
+      border-radius: 50%;
+      border: 2px solid #00e6ff;
+      color: #00e6ff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7em;
+      animation: spin 4s linear infinite;
+      box-shadow: 0 0 8px rgba(0, 230, 255, 0.4);
+      transition: all 0.4s ease;
+    }
+
+    .logo:hover .logo-wheel {
+      animation-play-state: paused;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+      border-color: #00ffff;
+      transform: scale(1.1);
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .logo:hover {
+      text-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
+      transform: scale(1.02);
+    }
+
+    h1 {
+      margin-top: 15px;
+      font-size: 1.6em;
+    }
+
+    p {
+      max-width: 500px;
+      margin: 10px auto;
+      line-height: 1.5;
     }
   </style>
 </head>
 
 <body>
-  <div class="lang-switch">
-    <a href="index.html">🇷🇺 RU</a> |
-    <a href="en.html">🇬🇧 EN</a> |
-    <a href="he.html">🇮🇱 HE</a>
+  <div class="logo">
+    <span class="logo-big">M</span>
+    <span class="logo-wheel">O</span>
+    <span class="logo-small">ve</span>
+    <span class="logo-big">4U</span>
   </div>
 
-  <header>
-    <h1>Переезды на новом уровне</h1>
-    <div class="logo">
-  <span class="logo-big">M</span>
-  <span class="logo-wheel">O</span>
-  <span class="logo-small">ve</span>
-  <span class="logo-big">4U</span>
-</div>
-    <p>📞 +972 54-752-4092 · Работаем сегодня: 09:00 – 17:00</p>
-    <a href="#contact" class="btn-primary">Заказать переезд</a>
-    <a href="#quote" class="btn-secondary">Получить бесплатную оценку</a>
-    <p>Обслуживаем Гуш-Дан и весь Израиль · Переезды квартир и офисов · Пианино и тяжёлые предметы</p>
-  </header>
-
-  <section id="about" class="section--alt">
-    <h2 class="section-title">О НАС</h2>
-    <p>Опытные профессионалы, которым можно доверить свои вещи. Семейная компания по переездам, базирующаяся в Рамат-Гане.</p>
-    <p>Мы знаем, что переезд — это стресс. Наша цель — сделать его простым, безопасным и вовремя. От аккуратной упаковки до выгрузки в новом доме — Move4U рядом с вами на каждом этапе.</p>
-
-    <ul class="bullets">
-      <li>Профессиональные грузчики с опытом работы</li>
-      <li>Чистые машины и всё необходимое оборудование</li>
-      <li>Надёжная защита мебели и техники</li>
-      <li>Переезды квартир, офисов и складов по всему Израилю</li>
-    </ul>
-  </section>
-
-  <section id="services">
-    <h2 class="section-title">УСЛУГИ</h2>
-    <p>Прозрачные цены и честные условия. Без скрытых платежей.</p>
-
-    <ul class="bullets">
-      <li>Переезд квартиры — от 700 ₪</li>
-      <li>Офисный переезд — от 1200 ₪</li>
-      <li>Перевозка мебели, техники, пианино</li>
-      <li>Переезды по Гуш-Дану и всей стране</li>
-    </ul>
-  </section>
-
-  <section id="why">
-    <h2 class="section-title">ПОЧЕМУ MOVE4U</h2>
-    <ul class="bullets">
-      <li>Семейный бизнес — надёжность и внимание к деталям</li>
-      <li>Ответственность за каждую вещь клиента</li>
-      <li>Современные машины Hyundai H1 и Mitsubishi L200</li>
-      <li>Работаем с уважением и душой ❤️</li>
-    </ul>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">СВЯЗАТЬСЯ С НАМИ</h2>
-    <p>Позвоните, напишите в WhatsApp или оставьте заявку на сайте — и мы свяжемся с вами в ближайшее время.</p>
-    <p>
-      📱 Телефон / WhatsApp: <strong>+972 54-752-4092</strong><br />
-      📍 Рамат-Ган, Израиль<br />
-      🕓 Время работы: 09:00 – 17:00 (воскресенье–пятница)
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Move4U — аккуратные переезды по всему Израилю.</p>
-    <p>Надёжность · Профессионализм · Семейные ценности</p>
-  </footer>
+  <h1>Переезды на новом уровне</h1>
+  <p>Move4U — аккуратные переезды по всему Израилю: квартиры, офисы, склады. Мы относимся к вашим вещам как к своим.</p>
+  <p>📞 +972 54-752-4092 · Работаем сегодня: 09:00 – 17:00</p>
 </body>
 </html>
