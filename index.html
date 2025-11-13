@@ -1,100 +1,1286 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Move4U — аккуратные переезды по всему Израилю: квартиры, офисы, склады.">
-  <title>Move4U — Переезды по Израилю</title>
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-      background: #fff;
-      color: #222;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Move4U – Переезды по Израилю</title>
+    <meta name="description" content="Move4U – профессиональные переезды по Израилю. Квартирные и офисные переезды, упаковка, разборка-монтаж, перевозка мебели и техники.">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Можешь поменять шрифт, если хочешь -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <style>
+        :root {
+            --primary: #005bbb;
+            --primary-soft: #e6f1ff;
+            --accent: #ffb703;
+            --dark: #1a1a1a;
+            --muted: #6c757d;
+            --bg: #f5f7fb;
+            --white: #ffffff;
+            --border-radius: 12px;
+            --shadow-soft: 0 12px 30px rgba(0,0,0,0.08);
+            --max-width: 1120px;
+        }
 
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.1em;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      margin-top: 40px;
-      transition: all 0.3s ease;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-    .logo-big {
-      font-size: 1.3em;
-      background: linear-gradient(90deg, #00bfff, #00e6ff, #00ffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
-      transition: all 0.6s ease;
-    }
+        body {
+            font-family: "Rubik", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: var(--bg);
+            color: var(--dark);
+            line-height: 1.6;
+        }
 
-    .logo-small {
-      font-size: 0.9em;
-      color: #333;
-      opacity: 0.9;
-    }
+        body.lang-he {
+            font-family: "Heebo", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
 
-    .logo-wheel {
-      width: 1.15em;
-      height: 1.15em;
-      border-radius: 50%;
-      border: 2px solid #00e6ff;
-      color: #00e6ff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.7em;
-      animation: spin 4s linear infinite;
-      box-shadow: 0 0 8px rgba(0, 230, 255, 0.4);
-      transition: all 0.4s ease;
-    }
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-    .logo:hover .logo-wheel {
-      animation-play-state: paused;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
-      border-color: #00ffff;
-      transform: scale(1.1);
-    }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
-    }
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 16px;
+        }
 
-    .logo:hover {
-      text-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
-      transform: scale(1.02);
-    }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 99;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(14px);
+            box-shadow: 0 1px 12px rgba(0,0,0,0.04);
+        }
 
-    h1 {
-      margin-top: 15px;
-      font-size: 1.6em;
-    }
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 0;
+            gap: 16px;
+        }
 
-    p {
-      max-width: 500px;
-      margin: 10px auto;
-      line-height: 1.5;
-    }
-  </style>
+        .logo-block {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, var(--accent), var(--primary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+        }
+
+        .logo-text-main {
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .logo-text-sub {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            font-size: 14px;
+        }
+
+        .nav-links a {
+            position: relative;
+            padding-bottom: 2px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.2s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: 8px;
+            background: var(--primary-soft);
+            border-radius: 999px;
+            padding: 2px;
+        }
+
+        .lang-btn {
+            font-size: 12px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            transition: background 0.18s ease, color 0.18s ease, transform 0.08s ease;
+        }
+
+        .lang-btn:hover {
+            transform: translateY(-1px);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .hero {
+            padding: 40px 0 32px;
+        }
+
+        .hero-inner {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+            gap: 32px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--primary-soft);
+            color: var(--primary);
+            font-size: 12px;
+            margin-bottom: 14px;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 15px;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .hero-highlight {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        .highlight-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: var(--white);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.04);
+        }
+
+        .highlight-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), #003f88);
+            color: var(--white);
+            border-radius: 999px;
+            padding: 10px 20px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+            box-shadow: 0 10px 20px rgba(0,91,187,0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.12s ease, box-shadow 0.12s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(0,91,187,0.45);
+        }
+
+        .btn-outline {
+            border-radius: 999px;
+            padding: 9px 18px;
+            border: 1px solid var(--primary);
+            background: var(--white);
+            color: var(--primary);
+            font-size: 14px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-note {
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-card {
+            border-radius: 24px;
+            background: linear-gradient(135deg, #ffffff, #f5f7ff);
+            box-shadow: var(--shadow-soft);
+            padding: 16px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-photo {
+            border-radius: 18px;
+            overflow: hidden;
+            max-height: 260px;
+        }
+
+        .hero-photo-placeholder {
+            width: 100%;
+            height: 240px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, #dbeafe, #e5e7eb);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center;
+            padding: 10px;
+        }
+
+        .hero-badge-bottom {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            background: rgba(0,0,0,0.7);
+            color: var(--white);
+            font-size: 12px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hero-badge-bottom span {
+            font-weight: 500;
+        }
+
+        .hero-float-card {
+            position: absolute;
+            top: 16px;
+            right: -4px;
+            background: var(--white);
+            border-radius: 14px;
+            padding: 8px 12px;
+            box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+            font-size: 11px;
+            max-width: 200px;
+        }
+
+        .hero-float-pill {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .hero-float-big {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .section {
+            padding: 16px 0 8px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            gap: 10px;
+        }
+
+        .section-title {
+            font-size: 22px;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 16px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+        }
+
+        .card-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 12px;
+            background: var(--primary-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .card-text {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        .two-cols {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+            gap: 18px;
+        }
+
+        .list-check {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .list-check li {
+            position: relative;
+            padding-left: 20px;
+            font-size: 13px;
+            margin-bottom: 6px;
+        }
+
+        .list-check li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 12px;
+            color: var(--primary);
+        }
+
+        .review-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 14px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .review-name {
+            font-weight: 600;
+            margin-top: 4px;
+            font-size: 13px;
+        }
+
+        .review-stars {
+            color: #fbbf24;
+            font-size: 13px;
+        }
+
+        .contact-section {
+            margin-top: 4px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+            gap: 16px;
+        }
+
+        .contact-info-item {
+            font-size: 13px;
+            margin-bottom: 8px;
+        }
+
+        .contact-info-item strong {
+            font-weight: 600;
+        }
+
+        .contact-highlight {
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 8px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+
+        label {
+            font-size: 12px;
+            margin-bottom: 2px;
+            display: block;
+        }
+
+        input, textarea {
+            width: 100%;
+            border-radius: 10px;
+            border: 1px solid #d0d7e2;
+            padding: 8px 10px;
+            font-size: 13px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 86px;
+            resize: vertical;
+        }
+
+        .contact-small {
+            font-size: 11px;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        footer {
+            margin-top: 24px;
+            padding: 12px 0 20px;
+            font-size: 11px;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 6px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            text-decoration-thickness: 1px;
+        }
+
+        .phone-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 999px;
+            padding: 8px 12px;
+            background: var(--primary-soft);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .phone-pill span {
+            font-weight: 600;
+        }
+
+        .whatsapp-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-radius: 999px;
+            padding: 8px 12px;
+            background: #e7fbe7;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        .whatsapp-pill strong {
+            font-weight: 600;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: rgba(15,23,42,0.06);
+            margin: 8px 0 16px;
+        }
+
+        /* RTL для иврита */
+        body.lang-he {
+            direction: rtl;
+        }
+
+        body.lang-he .nav {
+            flex-direction: row-reverse;
+        }
+
+        body.lang-he .hero-inner,
+        body.lang-he .two-cols,
+        body.lang-he .cards-grid,
+        body.lang-he .contact-grid {
+            direction: rtl;
+        }
+
+        body.lang-he .nav-links {
+            flex-direction: row-reverse;
+        }
+
+        body.lang-he .nav-links a::after {
+            left: auto;
+            right: 0;
+        }
+
+        body.lang-he .list-check li {
+            padding-left: 0;
+            padding-right: 20px;
+        }
+
+        body.lang-he .list-check li::before {
+            left: auto;
+            right: 0;
+        }
+
+        body.lang-he .hero-float-card {
+            right: auto;
+            left: -4px;
+        }
+
+        body.lang-he .hero-badge-bottom {
+            left: auto;
+            right: 18px;
+        }
+
+        body.lang-he .lang-switcher {
+            direction: ltr; /*чтобы кнопки языков оставались в нормальном порядке*/
+        }
+
+        @media (max-width: 860px) {
+            .hero-inner,
+            .two-cols,
+            .cards-grid,
+            .contact-grid {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            header {
+                position: static;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 24px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            h1 {
+                font-size: 26px;
+            }
+
+            .hero-card {
+                border-radius: 20px;
+            }
+
+            .hero-float-card {
+                display: none;
+            }
+
+            .contact-card {
+                padding: 12px;
+            }
+        }
+    </style>
 </head>
+<body class="lang-ru">
+<header>
+    <div class="container">
+        <nav class="nav">
+            <div class="logo-block">
+                <div class="logo-icon">M</div>
+                <div>
+                    <div class="logo-text-main">Move4U</div>
+                    <div class="logo-text-sub i18n" data-key="logo-sub" data-lang="ru">
+                        Переезды по всему Израилю
+                    </div>
+                    <div class="logo-text-sub i18n" data-key="logo-sub" data-lang="en" style="display:none;">
+                        Moving & transport across Israel
+                    </div>
+                    <div class="logo-text-sub i18n" data-key="logo-sub" data-lang="he" style="display:none;">
+                        הובלות ושינוע בכל הארץ
+                    </div>
+                </div>
+            </div>
+            <div class="nav-links">
+                <a href="#services" class="i18n" data-key="nav-services" data-lang="ru">Услуги</a>
+                <a href="#services" class="i18n" data-key="nav-services" data-lang="en" style="display:none;">Services</a>
+                <a href="#services" class="i18n" data-key="nav-services" data-lang="he" style="display:none;">שירותים</a>
 
-<body>
-  <div class="logo">
-    <span class="logo-big">M</span>
-    <span class="logo-wheel">O</span>
-    <span class="logo-small">ve</span>
-    <span class="logo-big">4U</span>
-  </div>
+                <a href="#why" class="i18n" data-key="nav-why" data-lang="ru">Почему мы</a>
+                <a href="#why" class="i18n" data-key="nav-why" data-lang="en" style="display:none;">Why us</a>
+                <a href="#why" class="i18n" data-key="nav-why" data-lang="he" style="display:none;">למה אנחנו</a>
 
-  <h1>Переезды на новом уровне</h1>
-  <p>Move4U — аккуратные переезды по всему Израилю: квартиры, офисы, склады. Мы относимся к вашим вещам как к своим.</p>
-  <p>📞 +972 54-752-4092 · Работаем сегодня: 09:00 – 17:00</p>
+                <a href="#reviews" class="i18n" data-key="nav-reviews" data-lang="ru">Отзывы</a>
+                <a href="#reviews" class="i18n" data-key="nav-reviews" data-lang="en" style="display:none;">Reviews</a>
+                <a href="#reviews" class="i18n" data-key="nav-reviews" data-lang="he" style="display:none;">חוות דעת</a>
+
+                <a href="#contact" class="i18n" data-key="nav-contact" data-lang="ru">Контакты</a>
+                <a href="#contact" class="i18n" data-key="nav-contact" data-lang="en" style="display:none;">Contact</a>
+                <a href="#contact" class="i18n" data-key="nav-contact" data-lang="he" style="display:none;">צור קשר</a>
+            </div>
+            <div class="lang-switcher">
+                <button class="lang-btn active" data-lang-switch="ru">RU</button>
+                <button class="lang-btn" data-lang-switch="en">EN</button>
+                <button class="lang-btn" data-lang-switch="he">HE</button>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div>
+                <div class="badge">
+                    <div class="badge-dot"></div>
+                    <span class="i18n" data-key="badge" data-lang="ru">
+                        Аккуратные переезды для семьи и бизнеса
+                    </span>
+                    <span class="i18n" data-key="badge" data-lang="en" style="display:none;">
+                        Stress-free moves for families & businesses
+                    </span>
+                    <span class="i18n" data-key="badge" data-lang="he" style="display:none;">
+                        הובלה רגועה למשפחות ולעסקים
+                    </span>
+                </div>
+
+                <h1 class="i18n" data-key="hero-title" data-lang="ru">
+                    Переезд без нервов.<br />Мы бережно перевезём ваш дом.
+                </h1>
+                <h1 class="i18n" data-key="hero-title" data-lang="en" style="display:none;">
+                    Moving without stress.<br />We take care of your home.
+                </h1>
+                <h1 class="i18n" data-key="hero-title" data-lang="he" style="display:none;">
+                    עוברים דירה בלי לחץ.<br />אנחנו שומרים על הבית שלכם.
+                </h1>
+
+                <p class="hero-subtitle i18n" data-key="hero-sub" data-lang="ru">
+                    Квартирные и офисные переезды по всему Израилю. Опытные грузчики, ремни для крупной техники, аккуратная упаковка и отношение к вещам как к своим.
+                </p>
+                <p class="hero-subtitle i18n" data-key="hero-sub" data-lang="en" style="display:none;">
+                    Apartment and office moves all over Israel. Professional movers, safe straps for fridges and furniture, careful packing and family-style attitude.
+                </p>
+                <p class="hero-subtitle i18n" data-key="hero-sub" data-lang="he" style="display:none;">
+                    הובלות דירות ומשרדים בכל הארץ. צוות מנוסה, רצועות מקצועיות למקררים וריהוט, אריזה עדינה ויחס משפחתי.
+                </p>
+
+                <div class="hero-highlight">
+                    <div class="highlight-item i18n" data-key="hero-tag1" data-lang="ru">
+                        <span class="highlight-dot"></span> Переезды «под ключ»
+                    </div>
+                    <div class="highlight-item i18n" data-key="hero-tag1" data-lang="en" style="display:none;">
+                        <span class="highlight-dot"></span> Full-service moves
+                    </div>
+                    <div class="highlight-item i18n" data-key="hero-tag1" data-lang="he" style="display:none;">
+                        <span class="highlight-dot"></span> הובלה מלאה מקצה לקצה
+                    </div>
+
+                    <div class="highlight-item i18n" data-key="hero-tag2" data-lang="ru">
+                        <span class="highlight-dot"></span> Страхование груза
+                    </div>
+                    <div class="highlight-item i18n" data-key="hero-tag2" data-lang="en" style="display:none;">
+                        <span class="highlight-dot"></span> Insured cargo
+                    </div>
+                    <div class="highlight-item i18n" data-key="hero-tag2" data-lang="he" style="display:none;">
+                        <span class="highlight-dot"></span> תכולה מבוטחת
+                    </div>
+
+                    <div class="highlight-item i18n" data-key="hero-tag3" data-lang="ru">
+                        <span class="highlight-dot"></span> Честные цены без сюрпризов
+                    </div>
+                    <div class="highlight-item i18n" data-key="hero-tag3" data-lang="en" style="display:none;">
+                        <span class="highlight-dot"></span> Honest, transparent pricing
+                    </div>
+                    <div class="highlight-item i18n" data-key="hero-tag3" data-lang="he" style="display:none;">
+                        <span class="highlight-dot"></span> מחיר הוגן בלי הפתעות
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="scrollToId('contact')">
+                        <span class="i18n" data-key="btn-hero-main" data-lang="ru">Получить предложение</span>
+                        <span class="i18n" data-key="btn-hero-main" data-lang="en" style="display:none;">Get a quote</span>
+                        <span class="i18n" data-key="btn-hero-main" data-lang="he" style="display:none;">לקבלת הצעת מחיר</span>
+                        <span>➜</span>
+                    </button>
+
+                    <a class="btn-outline" href="https://wa.me/972547524092" target="_blank" rel="noopener">
+                        <span>📱</span>
+                        <span class="i18n" data-key="btn-hero-whatsapp" data-lang="ru">Написать в WhatsApp</span>
+                        <span class="i18n" data-key="btn-hero-whatsapp" data-lang="en" style="display:none;">Message on WhatsApp</span>
+                        <span class="i18n" data-key="btn-hero-whatsapp" data-lang="he" style="display:none;">הודעה ב-WhatsApp</span>
+                    </a>
+                </div>
+
+                <p class="hero-note i18n" data-key="hero-note" data-lang="ru">
+                    Работаем по всему Израилю: центр, север, юг. Помогаем семьям, студентам, бизнесу.
+                </p>
+                <p class="hero-note i18n" data-key="hero-note" data-lang="en" style="display:none;">
+                    We cover all of Israel: center, north and south. Families, students and businesses.
+                </p>
+                <p class="hero-note i18n" data-key="hero-note" data-lang="he" style="display:none;">
+                    עובדים בכל הארץ – מרכז, צפון ודרום. משפחות, סטודנטים ועסקים.
+                </p>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-photo">
+                        <!-- ЗДЕСЬ ТВОЁ ИЗОБРАЖЕНИЕ: замени div на <img src="images/family-truck.jpg" ...> -->
+                        <div class="hero-photo-placeholder i18n" data-key="hero-photo-text" data-lang="ru">
+                            Здесь будет фото: семья в новой квартире и грузчики с диваном/холодильником. <br>
+                            Вставь сюда свой файл, например:<br>
+                            <code>&lt;img src="images/family-move.jpg" alt="Счастливая семья на переезде"&gt;</code>
+                        </div>
+                        <div class="hero-photo-placeholder i18n" data-key="hero-photo-text" data-lang="en" style="display:none;">
+                            Place your real photo here: happy family in a new home and movers with a sofa/fridge.
+                        </div>
+                        <div class="hero-photo-placeholder i18n" data-key="hero-photo-text" data-lang="he" style="display:none;">
+                            כאן תשימו תמונה אמיתית: משפחה שמחה בדירה חדשה וסבלים עם ספה/מקרר.
+                        </div>
+                    </div>
+                    <div class="hero-badge-bottom">
+                        <span>🚚 Move4U</span>
+                        <span class="i18n" data-key="hero-badge-bottom" data-lang="ru">Переезды как для своей семьи</span>
+                        <span class="i18n" data-key="hero-badge-bottom" data-lang="en" style="display:none;">We move you like family</span>
+                        <span class="i18n" data-key="hero-badge-bottom" data-lang="he" style="display:none;">מובילים כאילו זה הבית שלנו</span>
+                    </div>
+                </div>
+
+                <div class="hero-float-card">
+                    <div class="hero-float-pill i18n" data-key="hero-float-pill" data-lang="ru">Сегодня</div>
+                    <div class="hero-float-pill i18n" data-key="hero-float-pill" data-lang="en" style="display:none;">Today</div>
+                    <div class="hero-float-pill i18n" data-key="hero-float-pill" data-lang="he" style="display:none;">היום</div>
+
+                    <div class="hero-float-big">
+                        3 <span class="i18n" data-key="hero-float-big-text" data-lang="ru">квартирных переезда</span>
+                        <span class="i18n" data-key="hero-float-big-text" data-lang="en" style="display:none;">apartment moves</span>
+                        <span class="i18n" data-key="hero-float-big-text" data-lang="he" style="display:none;">הובלות דירה</span>
+                    </div>
+                    <div class="i18n" data-key="hero-float-sub" data-lang="ru">
+                        Центр, Рамат-Ган → Ашкелон, Нетания.
+                    </div>
+                    <div class="i18n" data-key="hero-float-sub" data-lang="en" style="display:none;">
+                        Central Israel, Ramat-Gan → Ashkelon, Netanya.
+                    </div>
+                    <div class="i18n" data-key="hero-float-sub" data-lang="he" style="display:none;">
+                        מרכז הארץ, רמת גן → אשקלון, נתניה.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="services" class="section-divider"></div>
+
+    <!-- SERVICES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title i18n" data-key="services-title" data-lang="ru">Наши услуги</h2>
+                <h2 class="section-title i18n" data-key="services-title" data-lang="en" style="display:none;">Our services</h2>
+                <h2 class="section-title i18n" data-key="services-title" data-lang="he" style="display:none;">השירותים שלנו</h2>
+
+                <p class="section-subtitle i18n" data-key="services-sub" data-lang="ru">
+                    Всё, что нужно для комфортного переезда – от упаковки до сборки мебели.
+                </p>
+                <p class="section-subtitle i18n" data-key="services-sub" data-lang="en" style="display:none;">
+                    Everything you need for a comfortable move – from packing to furniture assembly.
+                </p>
+                <p class="section-subtitle i18n" data-key="services-sub" data-lang="he" style="display:none;">
+                    כל מה שצריך בשביל מעבר נוח – מאריזה ועד הרכבת רהיטים.
+                </p>
+            </div>
+
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">🏠</div>
+                    <div class="card-title i18n" data-key="serv1-title" data-lang="ru">Квартирные переезды</div>
+                    <div class="card-title i18n" data-key="serv1-title" data-lang="en" style="display:none;">Apartment moves</div>
+                    <div class="card-title i18n" data-key="serv1-title" data-lang="he" style="display:none;">הובלות דירה</div>
+
+                    <p class="card-text i18n" data-key="serv1-text" data-lang="ru">
+                        Аккуратный вынос вещей, внимательное отношение к мебели, упаковка хрупкого, ремни для холодильников и шкафов, подъём и спуск без лифта.
+                    </p>
+                    <p class="card-text i18n" data-key="serv1-text" data-lang="en" style="display:none;">
+                        Careful moving of furniture and boxes, extra protection for fragile items, professional straps for fridges and wardrobes, stairs or elevator – no problem.
+                    </p>
+                    <p class="card-text i18n" data-key="serv1-text" data-lang="he" style="display:none;">
+                        הוצאה עדינה של הרהיטים והארגזים, הגנה מיוחדת לפריטים שבירים, רצועות מקצועיות למקררים וארונות, מדרגות או מעלית – אין בעיה.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🏢</div>
+                    <div class="card-title i18n" data-key="serv2-title" data-lang="ru">Офисы и склады</div>
+                    <div class="card-title i18n" data-key="serv2-title" data-lang="en" style="display:none;">Offices & storage</div>
+                    <div class="card-title i18n" data-key="serv2-title" data-lang="he" style="display:none;">משרדים ומחסנים</div>
+
+                    <p class="card-text i18n" data-key="serv2-text" data-lang="ru">
+                        Переезд офиса «под ключ»: разборка и сборка рабочих мест, перевозка техники, серверов и документов с соблюдением порядка.
+                    </p>
+                    <p class="card-text i18n" data-key="serv2-text" data-lang="en" style="display:none;">
+                        Full office relocation: disassembling and assembling workstations, moving equipment, servers and paperwork with clear labeling.
+                    </p>
+                    <p class="card-text i18n" data-key="serv2-text" data-lang="he" style="display:none;">
+                        מעבר משרדים מלא: פירוק והרכבת עמדות עבודה, הובלת ציוד, שרתים וקלסרים עם סימון מסודר.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📦</div>
+                    <div class="card-title i18n" data-key="serv3-title" data-lang="ru">Упаковка и сборка</div>
+                    <div class="card-title i18n" data-key="serv3-title" data-lang="en" style="display:none;">Packing & assembly</div>
+                    <div class="card-title i18n" data-key="serv3-title" data-lang="he" style="display:none;">אריזה והרכבה</div>
+
+                    <p class="card-text i18n" data-key="serv3-text" data-lang="ru">
+                        Картонные коробки, плёнка, скотч, одеяла для мебели. Разборка и сборка шкафов, кроватей, детской мебели и т.п.
+                    </p>
+                    <p class="card-text i18n" data-key="serv3-text" data-lang="en" style="display:none;">
+                        Boxes, wrapping, tape, moving blankets. Disassembly and assembly of wardrobes, beds, nursery furniture and more.
+                    </p>
+                    <p class="card-text i18n" data-key="serv3-text" data-lang="he" style="display:none;">
+                        קרטונים, ניילונים, סלוטייפ ושמיכות ריפוד. פירוק והרכבת ארונות, מיטות, חדרי ילדים ועוד.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="why" class="section-divider"></div>
+
+    <!-- WHY -->
+    <section class="section">
+        <div class="container two-cols">
+            <div>
+                <div class="section-header">
+                    <h2 class="section-title i18n" data-key="why-title" data-lang="ru">Почему Move4U</h2>
+                    <h2 class="section-title i18n" data-key="why-title" data-lang="en" style="display:none;">Why Move4U</h2>
+                    <h2 class="section-title i18n" data-key="why-title" data-lang="he" style="display:none;">למה לבחור ב-Move4U</h2>
+                </div>
+
+                <p class="section-subtitle i18n" data-key="why-sub" data-lang="ru">
+                    Мы относимся к каждому переезду так, как будто перевозим собственную квартиру.
+                </p>
+                <p class="section-subtitle i18n" data-key="why-sub" data-lang="en" style="display:none;">
+                    We treat every move as if we were moving our own home.
+                </p>
+                <p class="section-subtitle i18n" data-key="why-sub" data-lang="he" style="display:none;">
+                    כל מעבר אצלנו מקבל יחס כאילו אנחנו מובילים את הבית שלנו.
+                </p>
+
+                <ul class="list-check">
+                    <li class="i18n" data-key="why-li1" data-lang="ru">
+                        Профессиональные грузчики, привыкшие работать с тяжёлой и крупной техникой.
+                    </li>
+                    <li class="i18n" data-key="why-li1" data-lang="en" style="display:none;">
+                        Professional movers used to working with heavy and bulky appliances.
+                    </li>
+                    <li class="i18n" data-key="why-li1" data-lang="he" style="display:none;">
+                        סבלים מקצועיים עם ניסיון בציוד כבד ונפחי.
+                    </li>
+
+                    <li class="i18n" data-key="why-li2" data-lang="ru">
+                        Надёжные ремни и правильная фиксация груза в машине.
+                    </li>
+                    <li class="i18n" data-key="why-li2" data-lang="en" style="display:none;">
+                        Reliable straps and proper fixing of your cargo inside the truck.
+                    </li>
+                    <li class="i18n" data-key="why-li2" data-lang="he" style="display:none;">
+                        רצועות איכותיות וקשירה נכונה של התכולה במשאית.
+                    </li>
+
+                    <li class="i18n" data-key="why-li3" data-lang="ru">
+                        Подача машины вовремя – без опозданий и пропаж.
+                    </li>
+                    <li class="i18n" data-key="why-li3" data-lang="en" style="display:none;">
+                        Punctual truck arrival – we show up on time, as agreed.
+                    </li>
+                    <li class="i18n" data-key="why-li3" data-lang="he" style="display:none;">
+                        הגעה בזמן – אנחנו מגיעים בשעה שסיכמנו.
+                    </li>
+
+                    <li class="i18n" data-key="why-li4" data-lang="ru">
+                        Чёткая цена заранее, без скрытых доплат «на месте».
+                    </li>
+                    <li class="i18n" data-key="why-li4" data-lang="en" style="display:none;">
+                        Clear price in advance with no surprise fees on site.
+                    </li>
+                    <li class="i18n" data-key="why-li4" data-lang="he" style="display:none;">
+                        מחיר ברור מראש – בלי תוספות מפתיעות בשטח.
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="card">
+                    <div class="card-icon">📞</div>
+                    <div class="card-title i18n" data-key="why-side-title" data-lang="ru">Всегда на связи</div>
+                    <div class="card-title i18n" data-key="why-side-title" data-lang="en" style="display:none;">Always in touch</div>
+                    <div class="card-title i18n" data-key="why-side-title" data-lang="he" style="display:none;">תמיד זמינים</div>
+
+                    <p class="card-text i18n" data-key="why-side-text" data-lang="ru">
+                        Мы знаем, как важно чувствовать спокойствие в день переезда. Поэтому отвечаем на сообщения и звонки, заранее уточняем детали и сопровождаем клиента до полного завершения переезда.
+                    </p>
+                    <p class="card-text i18n" data-key="why-side-text" data-lang="en" style="display:none;">
+                        We know how stressful moving day can be. That’s why we respond quickly, confirm all details in advance and stay in touch until the move is fully completed.
+                    </p>
+                    <p class="card-text i18n" data-key="why-side-text" data-lang="he" style="display:none;">
+                        אנחנו יודעים שיום מעבר דירה יכול להיות מלחיץ. לכן אנחנו זמינים לשאלות, מאשרים מראש את כל הפרטים ומלווים אתכם עד סוף ההובלה.
+                    </p>
+
+                    <div class="phone-pill">
+                        📞 <span>054-752-4092</span> – Move4U
+                    </div>
+                    <div class="whatsapp-pill">
+                        💬 <strong>WhatsApp:</strong> 054-752-4092
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="reviews" class="section-divider"></div>
+
+    <!-- REVIEWS -->
+    <section class="section">
+        <div class="container contact-section">
+            <div class="section-header">
+                <h2 class="section-title i18n" data-key="reviews-title" data-lang="ru">Отзывы клиентов</h2>
+                <h2 class="section-title i18n" data-key="reviews-title" data-lang="en" style="display:none;">Customer reviews</h2>
+                <h2 class="section-title i18n" data-key="reviews-title" data-lang="he" style="display:none;">מה הלקוחות אומרים</h2>
+
+                <p class="section-subtitle i18n" data-key="reviews-sub" data-lang="ru">
+                    Живые впечатления людей, которые уже переехали с нами.
+                </p>
+                <p class="section-subtitle i18n" data-key="reviews-sub" data-lang="en" style="display:none;">
+                    Real feedback from people who already moved with us.
+                </p>
+                <p class="section-subtitle i18n" data-key="reviews-sub" data-lang="he" style="display:none;">
+                    חוות דעת אמיתיות מלקוחות שעברו איתנו דירה.
+                </p>
+            </div>
+
+            <div class="two-cols">
+                <div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="i18n" data-key="rev1-text" data-lang="ru">
+                            «Отличная команда! Переезжали из Рамат-Гана в Ашкелон с детьми и кучей вещей. Всё аккуратно упаковали, холодильник спускали ремнями – ни одной царапины. Рекомендую!»
+                        </p>
+                        <p class="i18n" data-key="rev1-text" data-lang="en" style="display:none;">
+                            “Great team! We moved from Ramat-Gan to Ashkelon with kids and tons of stuff. Everything was packed carefully, fridge was carried with straps – not a single scratch. Highly recommend!”
+                        </p>
+                        <p class="i18n" data-key="rev1-text" data-lang="he" style="display:none;">
+                            "צוות מעולה! עברנו מרמת גן לאשקלון עם ילדים והמון ציוד. הכל נארז בצורה עדינה, את המקרר הורידו ברצועות – בלי שריטה אחת. מומלץ בחום!"
+                        </p>
+                        <div class="review-name">— Анна, Рамат-Ган</div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="i18n" data-key="rev2-text" data-lang="ru">
+                            «Цена договорилась заранее по WhatsApp, в день переезда всё было точно по договорённости, без сюрпризов и нервов. Приедем к ним ещё раз, если придётся переезжать».
+                        </p>
+                        <p class="i18n" data-key="rev2-text" data-lang="en" style="display:none;">
+                            “We agreed on the price in WhatsApp, and on moving day everything was exactly as promised, no surprises and no stress. Will call them again if we move.”
+                        </p>
+                        <p class="i18n" data-key="rev2-text" data-lang="he" style="display:none;">
+                            "קבענו את המחיר מראש ב-WhatsApp, וביום ההובלה הכל היה בדיוק כמו שסיכמנו – בלי הפתעות ובלי לחץ. נפנה אליהם שוב כשנצטרך."
+                        </p>
+                        <div class="review-name">— Михаил, Бат-Ям</div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="review-card">
+                        <div class="review-stars">★★★★★</div>
+                        <p class="i18n" data-key="rev3-text" data-lang="ru">
+                            «Заказывали офисный переезд. Рабочие места пометили стикерами, на новом месте всё быстро собрали, мы практически не остановили работу компании. Большое спасибо!»
+                        </p>
+                        <p class="i18n" data-key="rev3-text" data-lang="en" style="display:none;">
+                            “We ordered an office move. They labeled all desks, reassembled everything in the new place quickly, so we almost didn’t stop our workday. Thank you!”
+                        </p>
+                        <p class="i18n" data-key="rev3-text" data-lang="he" style="display:none;">
+                            "הזמנו הובלת משרד. הם סימנו את העמדות במדבקות, ובמקום החדש הרכיבו הכל במהירות – כמעט ולא עצרנו את העבודה. תודה רבה!"
+                        </p>
+                        <div class="review-name">— Офис в Тель-Авиве</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="contact" class="section-divider"></div>
+
+    <!-- CONTACT -->
+    <section class="section">
+        <div class="container contact-section">
+            <div class="contact-card">
+                <div class="contact-grid">
+                    <div>
+                        <h2 class="section-title i18n" data-key="contact-title" data-lang="ru">Заказать переезд</h2>
+                        <h2 class="section-title i18n" data-key="contact-title" data-lang="en" style="display:none;">Book your move</h2>
+                        <h2 class="section-title i18n" data-key="contact-title" data-lang="he" style="display:none;">להזמנת הובלה</h2>
+
+                        <p class="contact-highlight i18n" data-key="contact-sub" data-lang="ru">
+                            Расскажите, откуда и куда вы переезжаете, и мы вернёмся с точной ценой.
+                        </p>
+                        <p class="contact-highlight i18n" data-key="contact-sub" data-lang="en" style="display:none;">
+                            Tell us where you are moving from and to – and we’ll get back with a clear quote.
+                        </p>
+                        <p class="contact-highlight i18n" data-key="contact-sub" data-lang="he" style="display:none;">
+                            ספרו לנו מאיפה ולאן אתם עוברים – ונחזור אליכם עם הצעת מחיר ברורה.
+                        </p>
+
+                        <div class="contact-info-item">
+                            <strong>📞 Phone / טלפון:</strong> 054-752-4092
+                        </div>
+                        <div class="contact-info-item">
+                            <strong>💬 WhatsApp:</strong> <a href="https://wa.me/972547524092" target="_blank" rel="noopener">написать сообщение</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <strong>✉ Email:</strong> <a href="mailto:info@move4u.co.il">info@move4u.co.il</a>
+                        </div>
+                        <div class="contact-info-item">
+                            <strong>🌐 Site:</strong> move4u.co.il
+                        </div>
+                    </div>
+
+                    <div>
+                        <!-- ПРОСТАЯ ФОРМА: mailto. Можно позже заменить на Formspree / сервер -->
+                        <form class="contact-form" action="mailto:info@move4u.co.il" method="post" enctype="text/plain">
+                            <div class="form-row">
+                                <div>
+                                    <label class="i18n" data-key="form-name" data-lang="ru">Ваше имя</label>
+                                    <label class="i18n" data-key="form-name" data-lang="en" style="display:none;">Your name</label>
+                                    <label class="i18n" data-key="form-name" data-lang="he" style="display:none;">שם</label>
+                                    <input type="text" name="name" required />
+                                </div>
+                                <div>
+                                    <label class="i18n" data-key="form-phone" data-lang="ru">Телефон</label>
+                                    <label class="i18n" data-key="form-phone" data-lang="en" style="display:none;">Phone</label>
+                                    <label class="i18n" data-key="form-phone" data-lang="he" style="display:none;">טלפון</label>
+                                    <input type="tel" name="phone" required />
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div>
+                                    <label class="i18n" data-key="form-from" data-lang="ru">Откуда</label>
+                                    <label class="i18n" data-key="form-from" data-lang="en" style="display:none;">From (city)</label>
+                                    <label class="i18n" data-key="form-from" data-lang="he" style="display:none;">מאיזו עיר</label>
+                                    <input type="text" name="from" />
+                                </div>
+                                <div>
+                                    <label class="i18n" data-key="form-to" data-lang="ru">Куда</label>
+                                    <label class="i18n" data-key="form-to" data-lang="en" style="display:none;">To (city)</label>
+                                    <label class="i18n" data-key="form-to" data-lang="he" style="display:none;">לאיזו עיר</label>
+                                    <input type="text" name="to" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="i18n" data-key="form-details" data-lang="ru">Кратко о переезде</label>
+                                <label class="i18n" data-key="form-details" data-lang="en" style="display:none;">Move details</label>
+                                <label class="i18n" data-key="form-details" data-lang="he" style="display:none;">פרטי ההובלה</label>
+                                <textarea name="details" placeholder=""></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-primary">
+                                <span class="i18n" data-key="form-btn" data-lang="ru">Отправить заявку</span>
+                                <span class="i18n" data-key="form-btn" data-lang="en" style="display:none;">Send request</span>
+                                <span class="i18n" data-key="form-btn" data-lang="he" style="display:none;">שליחת בקשה</span>
+                            </button>
+
+                            <p class="contact-small i18n" data-key="form-note" data-lang="ru">
+                                Нажимая «Отправить», вы отправляете нам письмо на почту. Мы свяжемся с вами как можно быстрее.
+                            </p>
+                            <p class="contact-small i18n" data-key="form-note" data-lang="en" style="display:none;">
+                                By clicking “Send”, your email client will open and send us your request. We’ll get back to you as soon as possible.
+                            </p>
+                            <p class="contact-small i18n" data-key="form-note" data-lang="he" style="display:none;">
+                                בלחיצה על "שליחת בקשה" תיפתח תוכנת המייל שלכם ותשלח אלינו את הפרטים. נחזור אליכם בהקדם.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <span>© <span id="year"></span> Move4U</span>
+            <span class="i18n" data-key="footer-text" data-lang="ru">Переезды по Израилю – семья, надёжность, аккуратность.</span>
+            <span class="i18n" data-key="footer-text" data-lang="en" style="display:none;">Moving across Israel – family, reliability, care.</span>
+            <span class="i18n" data-key="footer-text" data-lang="he" style="display:none;">הובלות בכל הארץ – משפחתיות, אמינות וזהירות.</span>
+        </div>
+        <div>
+            move4u.co.il · info@move4u.co.il · 054-752-4092
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Установка текущего года в футере
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Переключение языков
+    const langButtons = document.querySelectorAll(".lang-btn");
+    const i18nElements = document.querySelectorAll(".i18n");
+
+    function setLanguage(lang) {
+        // body классы для RTL
+        document.body.classList.remove("lang-ru", "lang-en", "lang-he");
+        document.body.classList.add("lang-" + lang);
+
+        // показать нужный язык
+        i18nElements.forEach(function (el) {
+            const elLang = el.getAttribute("data-lang");
+            if (elLang === lang) {
+                el.style.display = "";
+            } else {
+                el.style.display = "none";
+            }
+        });
+
+        // активная кнопка
+        langButtons.forEach(function (btn) {
+            if (btn.getAttribute("data-lang-switch") === lang) {
+                btn.classList.add("active");
+            } else {
+                btn.classList.remove("active");
+            }
+        });
+
+        // установка dir для html
+        if (lang === "he") {
+            document.documentElement.setAttribute("lang", "he");
+            document.documentElement.setAttribute("dir", "rtl");
+        } else if (lang === "en") {
+            document.documentElement.setAttribute("lang", "en");
+            document.documentElement.setAttribute("dir", "ltr");
+        } else {
+            document.documentElement.setAttribute("lang", "ru");
+            document.documentElement.setAttribute("dir", "ltr");
+        }
+    }
+
+    langButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            const lang = btn.getAttribute("data-lang-switch");
+            setLanguage(lang);
+        });
+    });
+
+    // скролл к секциям
+    function scrollToId(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        window.scrollTo({
+            top: el.getBoundingClientRect().top + window.pageYOffset - 90,
+            behavior: "smooth"
+        });
+    }
+    window.scrollToId = scrollToId; // чтобы использовать onclick в HTML
+
+    // язык по умолчанию (RU)
+    setLanguage("ru");
+</script>
 </body>
 </html>
