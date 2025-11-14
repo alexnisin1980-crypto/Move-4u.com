@@ -1,217 +1,109 @@
 <!DOCTYPE html>
-<html lang="ru" dir="ltr">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <title>Move4U – הובלות ושינוע בישראל</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Move-4u</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <div class="top-strip"></div>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo-text-mark">
-        <span class="logo-main">Move-4u</span>
-      </div>
-      <div class="header-right">
-        <div class="lang-switch">
-          <button class="lang-btn active" data-lang="ru">RU</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="he">HE</button>
-        </div>
-        <a href="#contact" class="header-phone">+972 54 752 4092</a>
-      </div>
+<!-- HERO SECTION -->
+<header class="hero">
+    <img src="IMG_5632.jpeg" class="hero-image" alt="Family moving">
+    <div class="hero-overlay">
+        <h1 class="hero-title">Move-4u</h1>
+        <p class="hero-phone">+972547524092</p>
+        <h2 class="hero-slogan">Переезды на новом уровне</h2>
+        <a href="#contact" class="hero-btn">Получить бесплатную оценку</a>
     </div>
-  </header>
+</header>
 
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <div class="hero-image" style="background-image: url('IMG_5619.jpeg');"></div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-      <div class="hero-text">
-        <div class="hero-phone">+972547524092</div>
-        <h1 data-i18n="hero-title">
-          Переезды на новом уровне
-        </h1>
-        <p class="hero-subtitle" data-i18n="hero-subtitle">
-          Поехали в новый дом спокойно
+<!-- ABOUT US -->
+<section id="about" class="section">
+    <div class="container narrow">
+        <h2 class="section-title">О нас</h2>
+
+        <div class="split-image-top">
+            <img src="IMG_5633.jpeg" alt="Small family company movers">
+        </div>
+
+        <h3 class="section-subtitle">Experienced Professionals</h3>
+        <p class="section-text">
+            Мы небольшая семейная компания по переездам, которая ставит качество и честность превыше всего.
         </p>
-        <a href="#contact" class="btn btn-outline-light" data-i18n="hero-cta">
-          Заказать переезд
-        </a>
-      </div>
     </div>
-  </section>
+</section>
 
-  <!-- ABOUT US -->
-  <section id="about" class="section">
+<!-- FINDING THE RIGHT SERVICE -->
+<section id="services" class="section section-alt">
     <div class="container narrow">
-      <h2 class="section-title" data-i18n="about-title">About Us</h2>
-      <div class="split-image-top">
-        <img src="IMG_5618.jpeg" alt="Movers with boxes" />
-      </div>
-      <h3 class="section-subtitle" data-i18n="about-subtitle">
-        Experienced Professionals
-      </h3>
-      <p class="section-text" data-i18n="about-text">
-        Мы небольшая семейная компания по переездам в Израиле. Работаем аккуратно, вежливо и до конца отвечаем за результат. Команда обучена и бережно относится к каждой вещи.
-      </p>
-    </div>
-  </section>
 
-  <!-- FINDING THE RIGHT SERVICE -->
-  <section id="services" class="section section-alt">
-    <div class="container narrow">
-      <img src="IMG_5617.jpeg" class="full-image" alt="Moving boxes" />
-      <h2 class="section-title" data-i18n="services-title">
-        Finding the Right Service
-      </h2>
-      <p class="section-text" data-i18n="services-text">
-        Мы бесплатно консультируем, объясняем все варианты и подбираем услугу под ваши задачи. Важно не только перевезти вещи, но и избежать проблем в будущем.
-      </p>
-      <img src="IMG_5616.jpeg" class="full-image" alt="Movers with carpet and box" />
-    </div>
-  </section>
+        <img src="IMG_5615.jpeg" class="full-image" alt="Couple with boxes">
 
-  <!-- CUSTOMER SATISFACTION -->
-  <section id="satisfaction" class="section">
-    <div class="container narrow">
-      <img src="IMG_5618.jpeg" class="full-image" alt="Happy movers" />
-      <h2 class="section-title" data-i18n="satisfaction-title">
-        Customer Satisfaction Guaranteed
-      </h2>
-      <p class="section-text" data-i18n="satisfaction-text">
-        Мы совмещаем качественную работу и человеческий подход. Работаем с частными и коммерческими клиентами, берём ответственность за результат и даём гарантию на все услуги.
-      </p>
-    </div>
-  </section>
-
-  <!-- PHOTO GALLERY -->
-  <section id="gallery" class="section section-alt">
-    <div class="container narrow">
-      <h2 class="section-title" data-i18n="gallery-title">
-        Photo Gallery
-      </h2>
-      <div class="gallery-wrapper">
-        <div class="gallery-main">
-          <img src="IMG_5615.jpeg" alt="Family with boxes" />
-        </div>
-        <div class="gallery-counter" data-i18n="gallery-counter">
-          1 / 6
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA: ARRANGE YOUR MOVE -->
-  <section id="cta-move" class="section">
-    <div class="container narrow">
-      <h2 class="section-title" data-i18n="cta-move-title">
-        Arrange Your Move
-      </h2>
-      <p class="section-text" data-i18n="cta-move-text">
-        Скоро появятся новые онлайн-сервисы. А пока просто оставьте заявку — мы перезвоним, уточним детали и предложим честную цену.
-      </p>
-      <a href="#contact" class="btn btn-outline-dark" data-i18n="cta-move-btn">
-        Получить бесплатную оценку
-      </a>
-    </div>
-  </section>
-
-  <!-- CONTACT US -->
-  <section id="contact" class="section section-alt">
-    <div class="container narrow">
-      <h2 class="section-title" data-i18n="contact-title">
-        Contact Us
-      </h2>
-      <p class="section-text contact-intro" data-i18n="contact-intro">
-        Мы остаёмся на связи с клиентом до конца работы. Хотите узнать цену или есть особые запросы? Напишите нам — договоримся.
-      </p>
-
-      <div class="contact-block">
-        <h3 class="contact-name">Move-4u</h3>
-        <p class="contact-line" data-i18n="contact-address">
-          משמר הירדן 7, רמת גן, 5227107
+        <h2 class="section-title">Finding the Right Service</h2>
+        <p class="section-text">
+            Мы бесплатно консультируем, объясняем все варианты и подбираем лучшее решение под ваш переезд.
         </p>
-        <p class="contact-line">+972547524092</p>
-      </div>
 
-      <form class="contact-form" action="mailto:info@move4u.co.il" method="post" enctype="text/plain">
-        <div class="form-row">
-          <label>
-            <span data-i18n="form-name-label">Имя</span>
-            <input type="text" name="name" required />
-          </label>
-          <label>
-            <span data-i18n="form-phone-label">Телефон</span>
-            <input type="tel" name="phone" required />
-          </label>
-        </div>
-        <label>
-          <span data-i18n="form-email-label">Email</span>
-          <input type="email" name="email" />
-        </label>
-        <label>
-          <span data-i18n="form-message-label">Кратко опишите ваш переезд</span>
-          <textarea name="message" rows="4"></textarea>
-        </label>
-        <button type="submit" class="btn btn-outline-dark" data-i18n="form-submit">
-          Отправить
-        </button>
-      </form>
+        <img src="IMG_5616.jpeg" class="full-image" alt="Movers carrying rolled carpet and box">
+
     </div>
-  </section>
+</section>
 
-  <!-- HOURS -->
-  <section id="hours" class="section">
+<!-- CUSTOMER SATISFACTION -->
+<section id="satisfaction" class="section">
     <div class="container narrow">
-      <h2 class="section-title" data-i18n="hours-title">
-        Hours
-      </h2>
-      <p class="hours-line">
-        <span data-i18n="hours-open-today-label">Открыто сегодня</span>
-        <span class="hours-time" data-i18n="hours-open-today-time">09:00 – 17:00</span>
-      </p>
-      <a href="#contact" class="btn btn-outline-dark" data-i18n="hours-cta">
-        Получить бесплатную оценку
-      </a>
-    </div>
-  </section>
 
-  <!-- SUBSCRIBE -->
-  <section id="subscribe" class="subscribe">
-    <div class="subscribe-bg" style="background-image: url('IMG_5614.jpeg');"></div>
-    <div class="subscribe-overlay"></div>
-    <div class="container subscribe-content">
-      <h2 class="section-title invert" data-i18n="subscribe-title">
-        Subscribe
-      </h2>
-      <p class="section-text invert" data-i18n="subscribe-text">
-        Подпишитесь и получайте новости, акции и полезные советы по переездам.
-      </p>
-      <form class="subscribe-form">
-        <label class="sr-only">Email</label>
-        <input type="email" placeholder="Email" />
-        <button type="button" class="btn btn-outline-light" data-i18n="subscribe-btn">
-          Sign up
-        </button>
-      </form>
-    </div>
-  </section>
+        <img src="IMG_5617.jpeg" class="full-image" alt="Two movers with boxes">
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p class="footer-copy" data-i18n="footer-copy">
-        Copyright © 2025 Move-4u - Все права защищены.
-      </p>
-      <p class="footer-powered">Powered by Move4U</p>
+        <h2 class="section-title">Customer Satisfaction Guaranteed</h2>
+        <p class="section-text">
+            Мы совмещаем качественную работу и человеческий подход.
+        </p>
     </div>
-  </footer>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section id="gallery" class="section section-alt">
+    <div class="container narrow">
+        <h2 class="section-title">Photo Gallery</h2>
+
+        <div class="gallery-wrapper">
+            <img src="IMG_5632.jpeg" alt="Family sitting on porch">
+            <img src="IMG_5633.jpeg" alt="Movers unloading truck">
+            <img src="IMG_5615.jpeg" alt="Couple indoors with boxes">
+            <img src="IMG_5616.jpeg" alt="Movers working">
+            <img src="IMG_5617.jpeg" alt="Movers with trolley">
+            <img src="IMG_5618.jpeg" alt="Final moving scene">
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section id="contact" class="section">
+    <div class="container narrow">
+        <h2 class="section-title">Свяжитесь с нами</h2>
+
+        <form class="contact-form">
+            <label>Ваше имя</label>
+            <input type="text" required />
+
+            <label>Телефон</label>
+            <input type="text" required />
+
+            <label>Сообщение</label>
+            <textarea required></textarea>
+
+            <button type="submit" class="btn">Отправить</button>
+        </form>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
+
 </body>
 </html>
