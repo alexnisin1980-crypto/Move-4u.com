@@ -184,3 +184,43 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+// Карусель фотогалереи
+
+const galleryImages = [
+  "IMG_5632.jpeg", // первая
+  "IMG_5633.jpeg",
+  "IMG_5615.jpeg",
+  "IMG_5616.jpeg",
+  "IMG_5617.jpeg",
+  "IMG_5618.jpeg"  // последняя
+];
+
+let galleryIndex = 0;
+
+function showGalleryImage() {
+  const img = document.getElementById("gallery-image");
+  if (!img) return;
+  img.src = galleryImages[galleryIndex];
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  // при загрузке страницы показываем первую
+  showGalleryImage();
+
+  const prevBtn = document.querySelector(".gallery-nav.prev");
+  const nextBtn = document.querySelector(".gallery-nav.next");
+
+  if (prevBtn) {
+    prevBtn.addEventListener("click", () => {
+      galleryIndex = (galleryIndex - 1 + galleryImages.length) % galleryImages.length;
+      showGalleryImage();
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener("click", () => {
+      galleryIndex = (galleryIndex + 1) % galleryImages.length;
+      showGalleryImage();
+    });
+  }
+});
