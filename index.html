@@ -1,110 +1,433 @@
+
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Move4U — הובלות מדויקות בכל רחבי ישראל: דירות, משרדים ומחסנים.">
-  <title>Move4U — הובלות בישראל</title>
+  <meta charset="UTF-8" />
+  <title>Move-4u – Переезды на новом уровне</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Основной CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Красивые шрифты -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Nunito:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Переопределения стилей под красивый вид -->
   <style>
     body {
-     <div class="lang-switch">
-    <a href="index.html" class="lang-link lang-he">HE</a>
-    <a href="ru.html" class="lang-link lang-ru">RU</a>
-    <a href="en.html" class="lang-link lang-en">EN</a>
-  </div> font-family: 'Poppins', sans-serif;
-      text-align: center;
-      background: #fff;
-      color: #222;
       margin: 0;
-      padding: 0;
-      direction: rtl;
+      font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background-color: #ffffff;
+      color: #222222;
     }
 
-    .logo {
-      display: inline-flex;
+    .section {
+      padding: 56px 0;
+    }
+
+    .section-alt {
+      background-color: #faf6f1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .narrow {
+      max-width: 720px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      letter-spacing: 0.08em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .section-text {
+      font-size: 14px;
+      color: #494340;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .section-subtitle {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      text-align: center;
+      margin-top: 18px;
+      margin-bottom: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: 4px;
+    }
+
+    /* HERO */
+
+    header.hero {
+      position: relative;
+      height: 70vh;
+      min-height: 420px;
+      overflow: hidden;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(75%) contrast(110%);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.35),
+        rgba(0,0,0,0.65)
+      );
+      padding: 32px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+
+    .hero-top {
+      display: flex;
       align-items: center;
-      gap: 0.1em;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      margin-top: 40px;
-      transition: all 0.3s ease;
+      justify-content: space-between;
+      max-width: 960px;
+      margin: 0 auto 12px auto;
+      padding: 0 4px;
     }
 
-    .logo-big {
-      font-size: 1.3em;
-      background: linear-gradient(90deg, #00bfff, #00e6ff, #00ffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 10px rgba(0, 255, 255, 0.25);
-      transition: all 0.6s ease;
+    .hero-logo {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      letter-spacing: 0.14em;
+      color: #ffffff;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.55);
     }
 
-    .logo-small {
-      font-size: 0.9em;
-      color: #333;
-      opacity: 0.9;
+    .hero-phone {
+      font-family: "Nunito", sans-serif;
+      font-size: 13px;
+      letter-spacing: 0.16em;
+      color: #ffffff;
+      text-transform: uppercase;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
     }
 
-    .logo-wheel {
-      width: 1.15em;
-      height: 1.15em;
-      border-radius: 50%;
-      border: 2px solid #00e6ff;
-      color: #00e6ff;
+    .hero-center {
+      flex: 1;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-content {
+      max-width: 480px;
+      margin: 0 auto 32px auto;
+      text-align: left;
+      color: #ffffff;
+      padding: 0 4px;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      margin: 0 0 8px 0;
+      text-transform: uppercase;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+    }
+
+    .hero-subtitle {
+      font-size: 16px;
+      margin: 0 0 18px 0;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+
+    .hero-btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 0.7em;
-      animation: spin 4s linear infinite;
-      box-shadow: 0 0 8px rgba(0, 230, 255, 0.4);
-      transition: all 0.4s ease;
+      padding: 10px 24px;
+      border-radius: 999px;
+      border: 1px solid #ffffff;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
 
-    .logo:hover .logo-wheel {
-      animation-play-state: paused;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
-      border-color: #00ffff;
-      transform: scale(1.1);
+    .hero-btn:hover {
+      background-color: rgba(255,255,255,0.18);
     }
 
-    @keyframes spin {
-      from { transform: rotate(0deg); }
-      to   { transform: rotate(360deg); }
+    @media (max-width: 768px) {
+      header.hero {
+        height: 60vh;
+        min-height: 380px;
+      }
+      .hero-title {
+        font-size: 24px;
+      }
+      .hero-subtitle {
+        font-size: 14px;
+      }
+      .hero-overlay {
+        padding: 24px 16px;
+      }
+      .hero-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+      }
+      .hero-content {
+        margin-bottom: 20px;
+      }
     }
 
-    .logo:hover {
-      text-shadow: 0 0 14px rgba(0, 255, 255, 0.5);
-      transform: scale(1.02);
+    /* ABOUT / SERVICES / SATISFACTION */
+
+    .full-image {
+      margin-bottom: 18px;
     }
 
-    h1 {
-      margin-top: 15px;
-      font-size: 1.6em;
+    .split-image-top {
+      margin-bottom: 18px;
     }
 
-    p {
-      max-width: 500px;
-      margin: 10px auto;
-      line-height: 1.5;
+    .split-image-top img {
+      width: 100%;
+    }
+
+    /* GALLERY */
+
+    #gallery .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    #gallery .gallery-grid img {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+    }
+
+    @media (max-width: 768px) {
+      #gallery .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      #gallery .gallery-grid img {
+        height: 120px;
+      }
+    }
+
+    /* CONTACT */
+
+    #contact .section-title {
+      margin-bottom: 16px;
+    }
+
+    .contact-form {
+      max-width: 520px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-form label {
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      border-radius: 4px;
+      border: 1px solid #ccc4b8;
+      padding: 8px 10px;
+      font-family: "Nunito", sans-serif;
+      font-size: 13px;
+      box-sizing: border-box;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .btn-submit {
+      align-self: center;
+      margin-top: 6px;
+      padding: 9px 22px;
+      border-radius: 999px;
+      border: 1px solid #111111;
+      background-color: transparent;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+
+    .btn-submit:hover {
+      background-color: #111111;
+      color: #ffffff;
+    }
+
+    /* FOOTER */
+
+    footer.site-footer {
+      background-color: #111111;
+      color: #f2eee7;
+      padding: 14px 0 16px;
+      text-align: center;
+      font-size: 11px;
     }
   </style>
 </head>
 
-<body><div class="lang-switch">
-    <a href="index.html" class="lang-link lang-he">HE</a>
-    <a href="ru.html" class="lang-link lang-ru">RU</a>
-    <a href="en.html" class="lang-link lang-en">EN</a>
-  </div>
-  <div class="logo">
-    <span class="logo-big">M</span>
-    <span class="logo-wheel">O</span>
-    <span class="logo-small">ve</span>
-    <span class="logo-big">4U</span>
-  </div>
+<body>
 
-  <h1>הובלות ברמה אחרת</h1>
-  <p>Move4U – הובלות מדויקות בכל רחבי ישראל: דירות, משרדים ומחסנים. אנו מתייחסים לחפצים שלכם כמו לשלנו.</p>
-  <p>📞 +972 54-752-4092 · פתוח היום: 09:00 – 17:00</p>
+  <!-- HERO (первая картинка: IMG_5632.jpeg) -->
+  <header class="hero">
+    <img src="IMG_5632.jpeg" class="hero-image" alt="Счастливая семья во время переезда">
+
+    <div class="hero-overlay">
+      <div class="hero-top">
+        <div class="hero-logo">MOVE-4U</div>
+        <div class="hero-phone">+972 54 752 4092</div>
+      </div>
+
+      <div class="hero-center">
+        <div class="hero-content">
+          <h1 class="hero-title">Переезды на новом уровне</h1>
+          <p class="hero-subtitle">Семейные переезды по всему Израилю – аккуратно, честно, в срок.</p>
+          <a href="#contact" class="hero-btn">Получить бесплатную оценку</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT US -->
+  <section id="about" class="section">
+    <div class="container narrow">
+      <h2 class="section-title">О нас</h2>
+
+      <div class="split-image-top">
+        <img src="IMG_5633.jpeg" alt="Грузовик и семья во время переезда">
+      </div>
+
+      <h3 class="section-subtitle">Experienced Professionals</h3>
+      <p class="section-text">
+        Мы небольшая семейная компания по переездам в Израиле. Работаем аккуратно, вежливо и до конца отвечаем за результат.
+        Для нас важны и ваши вещи, и ваши нервы – поэтому всё делаем спокойно, аккуратно и без сюрпризов в цене.
+      </p>
+    </div>
+  </section>
+
+  <!-- FINDING THE RIGHT SERVICE -->
+  <section id="services" class="section section-alt">
+    <div class="container narrow">
+      <img src="IMG_5615.jpeg" class="full-image" alt="Молодая пара среди коробок">
+
+      <h2 class="section-title">Finding the Right Service</h2>
+      <p class="section-text">
+        Мы бесплатно консультируем и помогаем подобрать услугу под ваши задачи: квартира, частный дом, склад или офис.
+        Объясняем варианты заранее, чтобы не было сюрпризов в день переезда.
+      </p>
+
+      <img src="IMG_5616.jpeg" class="full-image" alt="Грузчики несут коробки и ковер">
+    </div>
+  </section>
+
+  <!-- CUSTOMER SATISFACTION -->
+  <section id="satisfaction" class="section">
+    <div class="container narrow">
+      <img src="IMG_5617.jpeg" class="full-image" alt="Грузчики с тележкой и коробками">
+
+      <h2 class="section-title">Customer Satisfaction Guaranteed</h2>
+      <p class="section-text">
+        Мы совмещаем качественную работу и человеческий подход. Остаёмся с вами на связи до конца переезда, помогаем с мелочами и не бросаем на середине.
+        Наши клиенты часто возвращаются и рекомендуют нас друзьям.
+      </p>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY (последняя: IMG_5618.jpeg) -->
+  <section id="gallery" class="section section-alt">
+    <div class="container narrow">
+      <h2 class="section-title">Photo Gallery</h2>
+      <p class="section-text">
+        Несколько моментов с наших переездов.
+      </p>
+
+      <div class="gallery-grid">
+        <img src="IMG_5632.jpeg" alt="Family sitting outside with boxes">
+        <img src="IMG_5633.jpeg" alt="Movers unloading truck">
+        <img src="IMG_5615.jpeg" alt="Couple indoors with boxes">
+        <img src="IMG_5616.jpeg" alt="Movers working carefully">
+        <img src="IMG_5617.jpeg" alt="Movers with trolley">
+        <img src="IMG_5618.jpeg" alt="Family and movers – final scene">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container narrow">
+      <h2 class="section-title">Свяжитесь с нами</h2>
+      <p class="section-text">
+        Оставьте свои данные, и мы перезвоним, чтобы уточнить детали переезда и дать честную цену без скрытых платежей.
+      </p>
+
+      <form class="contact-form" action="mailto:info@move4u.co.il" method="post" enctype="text/plain">
+        <div>
+          <label for="name">Ваше имя</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+
+        <div>
+          <label for="phone">Телефон</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+
+        <div>
+          <label for="message">Кратко о вашем переезде</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      Copyright © 2025 Move-4u – Все права защищены.
+    </div>
+  </footer>
+
+  <!-- Если нужен script.js, можно оставить подключение -->
+  <!-- <script src="script.js"></script> -->
 </body>
 </html>
 
