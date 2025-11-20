@@ -149,10 +149,14 @@
       display: flex;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .hero-btn {
       display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 12px 26px;
       border-radius: 999px;
       border: 1px solid #fff;
@@ -440,6 +444,31 @@
       opacity: 0.8;
     }
 
+    /* WHATSAPP FLOAT BUTTON */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #25D366;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 30;
+      text-decoration: none;
+    }
+
+    .whatsapp-icon {
+      font-weight: 700;
+      color: #fff;
+      font-size: 20px;
+      letter-spacing: 0.05em;
+    }
+
     /* RESPONSIVE */
 
     @media (max-width: 900px) {
@@ -724,8 +753,10 @@
       </p>
 
       <div class="form-grid">
-        <!-- REQUEST FORM -->
-        <form id="request-form">
+        <!-- REQUEST FORM: отправка на почту через FormSubmit -->
+        <form id="request-form"
+              action="https://formsubmit.co/info@move4u.co.il"
+              method="POST">
           <div class="form-title" data-i18n="contact.form.title">
             טופס להשארת פרטים
           </div>
@@ -733,40 +764,43 @@
             אפשר לכתוב בקצרה – מיישרים ציפיות בטלפון.
           </div>
 
+          <!-- служебные поля FormSubmit -->
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New move request from Move-4U site">
+
           <div class="form-row">
             <label for="rq-name" data-i18n="contact.form.name.label">שם מלא</label>
-            <input id="rq-name" type="text" data-i18n-placeholder="contact.form.name.ph" placeholder=""/>
+            <input id="rq-name" name="name" type="text" data-i18n-placeholder="contact.form.name.ph" placeholder=""/>
           </div>
 
           <div class="form-row">
             <label for="rq-phone" data-i18n="contact.form.phone.label">טלפון</label>
-            <input id="rq-phone" type="tel" data-i18n-placeholder="contact.form.phone.ph" placeholder=""/>
+            <input id="rq-phone" name="phone" type="tel" data-i18n-placeholder="contact.form.phone.ph" placeholder=""/>
           </div>
 
           <div class="form-row">
             <label for="rq-city" data-i18n="contact.form.city.label">עיר מוצא + יעד</label>
-            <input id="rq-city" type="text" data-i18n-placeholder="contact.form.city.ph" placeholder=""/>
+            <input id="rq-city" name="route" type="text" data-i18n-placeholder="contact.form.city.ph" placeholder=""/>
           </div>
 
           <div class="form-row">
             <label for="rq-date" data-i18n="contact.form.date.label">תאריך משוער</label>
-            <input id="rq-date" type="date" />
+            <input id="rq-date" name="date" type="date" />
           </div>
 
           <div class="form-row">
             <label for="rq-details" data-i18n="contact.form.details.label">פרטים על ההובלה</label>
-            <textarea id="rq-details" data-i18n-placeholder="contact.form.details.ph" placeholder=""></textarea>
+            <textarea id="rq-details" name="details" data-i18n-placeholder="contact.form.details.ph" placeholder=""></textarea>
           </div>
 
           <div class="form-actions">
             <button type="submit" class="primary-submit" data-i18n="contact.form.submit">
               השאר פרטים
             </button>
-            <div class="form-status" id="request-status"></div>
           </div>
         </form>
 
-        <!-- REVIEW FORM -->
+        <!-- REVIEW FORM (демо, без отправки на почту) -->
         <form id="review-form">
           <div class="form-title" data-i18n="review.form.title">
             השאר חוות דעת
@@ -822,6 +856,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Плавающая кнопка WhatsApp -->
+  <a class="whatsapp-float"
+     href="https://wa.me/972547524092?text=%D7%A9%D7%9C%D7%95%D7%9D%2C%20%D7%90%D7%A0%D7%99%20%D7%A6%D7%A8%D7%99%D7%9A%20%D7%94%D7%A6%D7%A2%D7%AA%20%D7%9E%D7%97%D7%99%D7%A8%20%D7%9C%D7%94%D7%95%D7%91%D7%9C%D7%94"
+     target="_blank"
+     rel="noopener"
+     aria-label="Chat on WhatsApp with Move-4U">
+    <span class="whatsapp-icon">WA</span>
+  </a>
 
   <script>
     const translations = {
@@ -1092,25 +1135,11 @@
         });
       });
 
-      // формы — просто показываем сообщение, без отправки
-      const requestForm = document.getElementById("request-form");
+      // форма отзывов — пока просто сообщение на странице
       const reviewForm = document.getElementById("review-form");
-      const requestStatus = document.getElementById("request-status");
       const reviewStatus = document.getElementById("review-status");
 
-      if (requestForm) {
-        requestForm.addEventListener("submit", e => {
-          e.preventDefault();
-          requestStatus.textContent = document.documentElement.lang === "ru"
-            ? "Заявка сохранена на сайте. Чтобы получать такие заявки по телефону или на e-mail, нужно будет подключить отправку."
-            : document.documentElement.lang === "en"
-              ? "Request saved on the site. To actually receive it by phone or e-mail, we’ll later connect real sending."
-              : "הטופס נקלט באתר (לדוגמה). כדי לקבל אותו בפועל בטלפון או במייל, צריך יהיה לחבר מערכת שליחה.";
-          requestForm.reset();
-        });
-      }
-
-      if (reviewForm) {
+      if (reviewForm && reviewStatus) {
         reviewForm.addEventListener("submit", e => {
           e.preventDefault();
           reviewStatus.textContent = document.documentElement.lang === "ru"
