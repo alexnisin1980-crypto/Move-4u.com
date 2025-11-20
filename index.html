@@ -151,11 +151,14 @@
       text-transform: uppercase;
       text-shadow: 0 3px 8px rgba(0,0,0,0.6);
     }
-
-    .hero-subtitle {
-      font-size: 16px;
-      margin: 0 0 18px 0;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+.hero-subtitle {
+  font-size: 18px;  
+  line-height: 1.45;    /* нормальный воздушный текст */
+  margin: 0 0 20px 0;
+  font-weight: 300;
+  max-width: 420px;      /* задаем аккуратную ширину */
+  text-shadow: none;     /* УБИРАЕМ тень, она портит четкость */
+}
     }
 
     .hero-btn {
