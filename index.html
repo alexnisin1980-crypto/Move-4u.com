@@ -24,7 +24,11 @@
       --radius-pill: 999px;
       --shadow-soft: 0 14px 35px rgba(0,0,0,0.18);
     }
-
+.ltr-number {
+  direction: ltr;
+  unicode-bidi: bidi-override;
+  display: inline-block;
+}
     * {
       box-sizing: border-box;
     }
@@ -770,8 +774,8 @@
       <div class="hero-top">
         <div class="hero-logo" data-i18n="brand">MOVE4U</div>
         <div class="hero-phone">
-          <span>+972 54 752 4092</span>
-        </div>
+  <span class="ltr-number">+972 54 752 4092</span>
+</div>
       </div>
 
       <div class="hero-center-wrap">
@@ -990,8 +994,9 @@
       <div class="contact-layout">
         <div class="contact-info-card">
           <div class="contact-info-row">
-            <div class="contact-badge" data-i18n="contactBadgePhone">טלפון ישיר</div>
-            <div>+972 54 752 4092</div>
+  <div class="contact-badge" data-i18n="contactBadgePhone">טלפון ישיר</div>
+  <div class="ltr-number">+972 54 752 4092</div>
+</div>
           </div>
           <div class="contact-info-row">
             <div class="contact-badge" data-i18n="contactBadgeMail">דוא&quot;ל</div>
@@ -1067,7 +1072,7 @@
       <div class="footer-contact">
         <span data-i18n="footerText">Move4U – הובלות ושינוע בכל הארץ.</span>
         <span> | </span>
-        <span>+972 54 752 4092</span>
+        <span class="ltr-number">+972 54 752 4092</span>
         <span> | </span>
         <span>info@move4u.co.il</span>
       </div>
