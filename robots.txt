@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://move4u.co.il/sitemap.xml
