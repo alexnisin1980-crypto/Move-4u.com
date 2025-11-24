@@ -93,7 +93,65 @@
 </script>
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
+/* Кнопка отправки формы */
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 2.4rem;
+  border-radius: 999px;
+  border: none;
+  background: #b9823a;        /* твой коричнево-золотой */
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.18s ease, 
+              box-shadow 0.18s ease, 
+              transform 0.12s ease;
+}
 
+.btn-submit:hover {
+  background: #c9944f;
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  transform: translateY(-1px);
+}
+
+.btn-submit:active {
+  background: #a86f2e;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  transform: translateY(1px);
+}
+
+/* Сообщения об успехе и ошибке */
+.form-success,
+.form-error {
+  margin-top: 1rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Успешная отправка */
+.form-success {
+  background: #e7f6ec;
+  color: #137333;
+  border: 1px solid #b7e1cd;
+}
+
+/* Ошибка отправки */
+.form-error {
+  background: #fdecea;
+  color: #b71c1c;
+  border: 1px solid #f5c2c7;
+}
+
+/* Небольшой отступ внизу формы */
+.contact-form-card {
+  padding-bottom: 1.5rem;
+}
   <style>
     :root {
       --bg-main: #ffffff;
