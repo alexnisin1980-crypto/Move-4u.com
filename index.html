@@ -1215,7 +1215,49 @@
       </a>
     </div>
   </footer>
+<script>
+// Отправка формы через AJAX с FormSubmit
+const form = document.getElementById("leadForm");
+const successEl = document.getElementById("formSuccess");
+const errorEl = document.getElementById("formError");
 
+if (form) {
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Не даём странице уйти на formsubmit.co
+
+    if (successEl) successEl.style.display = "none";
+    if (errorEl) errorEl.style.display = "none";
+
+    const data = {
+      name: form.elements["name"]?.value || "",
+      phone: form.elements["phone"]?.value || "",
+      city: form.elements["city"]?.value || "",
+      date: form.elements["date"]?.value || "",
+      message: form.elements["message"]?.value || "",
+    };
+
+    fetch("https://formsubmit.co/ajax/info@move4u.co.il", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then(function (response) {
+        if (response.ok) {
+          if (successEl) successEl.style.display = "block";
+          form.reset();
+        } else {
+          throw new Error("Request failed");
+        }
+      })
+      .catch(function () {
+        if (errorEl) errorEl.style.display = "block";
+      });
+  });
+}
+</script>
   <script>
     // Smooth scroll for nav links
     document.querySelectorAll("[data-scroll]").forEach(function (el) {
