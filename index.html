@@ -1626,34 +1626,9 @@
     applyLanguage("he");
 
     // Form submission using FormSubmit via AJAX
-    const form = document.getElementById("leadForm");
-    const successEl = document.getElementById("formSuccess");
-    const errorEl = document.getElementById("formError");
-
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      successEl.style.display = "none";
-      errorEl.style.display = "none";
-
-      const formData = new FormData(form);
-
-      fetch("https://formsubmit.co/info@move4u.co.il", {
-        method: "POST",
-        body: formData,
-      })
-        .then(function (response) {
-          if (response.ok) {
-            successEl.style.display = "block";
-            form.reset();
-          } else {
-            throw new Error("Request failed");
-          }
-        })
-        .catch(function () {
-          errorEl.style.display = "block";
-        });
-    });
-  </script>
-</body>
+   <form
+  id="leadForm"
+  action="https://formsubmit.co/info@move4u.co.il"
+  method="POST"
+>
 </html>
