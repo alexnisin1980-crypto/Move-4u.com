@@ -1225,20 +1225,18 @@
     </div>
   </footer>
 <script>
-// Отправка формы через AJAX с FormSubmit + конверсия Google Ads
+// Отправка формы через AJAX с FormSubmit
 const form = document.getElementById("leadForm");
 const successEl = document.getElementById("formSuccess");
 const errorEl = document.getElementById("formError");
 
 if (form) {
   form.addEventListener("submit", function (e) {
-    e.preventDefault(); // Не даём странице уйти на formsubmit.co
+    e.preventDefault();
 
-    // Скрываем старые сообщения
     if (successEl) successEl.style.display = "none";
     if (errorEl) errorEl.style.display = "none";
 
-    // Собираем данные формы
     const data = {
       name: form.elements["name"]?.value || "",
       phone: form.elements["phone"]?.value || "",
@@ -1247,7 +1245,6 @@ if (form) {
       message: form.elements["message"]?.value || "",
     };
 
-    // Отправка на FormSubmit
     fetch("https://formsubmit.co/ajax/info@move4u.co.il", {
       method: "POST",
       headers: {
@@ -1259,17 +1256,11 @@ if (form) {
       .then(function (response) {
         if (response.ok) {
 
-          // 🔹 ВАЖНО: конверсия Google Ads при УСПЕШНОЙ отправке
-          try {
-            gtag('event', 'conversion', {
-              'send_to': 'AW-17750097271/s3TlCPSorMcbEPf6849C'
-              // 'transaction_id': '' // можно не заполнять для формы заявки
-            });
-          } catch (e) {
-            console.error("gtag недоступен:", e);
-          }
+          // 🔥 ВАЖНО: КОНВЕРСИЯ GOOGLE ADS
+          gtag('event', 'conversion', {
+            'send_to': 'AW-17750097271/s3TlCPSorMcbEPf6849C'
+          });
 
-          // Показать сообщение об успехе
           if (successEl) successEl.style.display = "block";
           form.reset();
         } else {
@@ -1281,7 +1272,7 @@ if (form) {
       });
   });
 }
-</script>
+
  
     // Smooth scroll for nav links
     document.querySelectorAll("[data-scroll]").forEach(function (el) {
