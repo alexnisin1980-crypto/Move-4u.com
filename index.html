@@ -1226,6 +1226,7 @@
   </footer>
 <script>
 // Отправка формы через AJAX с FormSubmit
+// Отправка формы через AJAX + отправка конверсии в Google Ads
 const form = document.getElementById("leadForm");
 const successEl = document.getElementById("formSuccess");
 const errorEl = document.getElementById("formError");
@@ -1255,9 +1256,14 @@ if (form) {
     })
       .then(function (response) {
         if (response.ok) {
-         gtag('event', 'conversion', {
-  'send_to': 'AW-17750097271/s3TlCPSorMcbEPf6849C'
-});
+
+          // 👉 сюда мы вызываем конверсию Google Ads
+          if (typeof gtag === "function") {
+            gtag('event', 'conversion', {
+              'send_to': 'AW-17750097271/s3TlCPSorMcbEPf6849C'
+              // 'transaction_id': '' // если когда-нибудь понадобится, добавим
+            });
+          }
 
           if (successEl) successEl.style.display = "block";
           form.reset();
