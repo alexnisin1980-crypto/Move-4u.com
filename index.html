@@ -195,210 +195,111 @@
       font-size: 11px;
     }
 
-    /* HERO */
-    header.hero {
-      position: relative;
-      height: 82vh;
-      min-height: 520px;
-      overflow: hidden;
-      color: #fff;
-    }
+ <body>
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <!-- Фоновая фотография -->
+    <img src="IMG_5632.jpeg"
+         alt="משפחה בזמן מעבר דירה"
+         class="hero-image" />
 
-    .hero-image {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      /* важно: сдвигаем кадр вверх, чтобы были видны лица, а не колени */
-      object-position: center 20%;
-      filter: brightness(72%) contrast(108%);
-    }
+    <!-- Затемнение + весь контент -->
+    <div class="hero-overlay">
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, var(--hero-overlay-light), var(--hero-overlay-dark));
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 28px 18px 36px;
-    }
+      <!-- Верх: логотип + телефон + WhatsApp -->
+      <div class="hero-top">
+        <div class="hero-logo" data-i18n="brand">MOVE4U</div>
 
-    .hero-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 960px;
-      margin: 0 auto;
-      gap: 8px;
-    }
+        <div class="hero-phone-wrapper">
+          <a href="tel:+972547524092" class="hero-phone-pill">
+            <span>📞</span>
+            <strong class="ltr-number">+972 547 524 092</strong>
+          </a>
 
-    .hero-logo {
-      font-family: "Playfair Display", serif;
-      letter-spacing: 0.18em;
-      font-size: 22px;
-      text-shadow: 0 2px 6px rgba(0,0,0,0.55);
-      white-space: nowrap;
-    }
+          <a href="https://wa.me/972547524092?text=שלום%20אני%20מעוניין%20בהובלה"
+             target="_blank" rel="noopener"
+             class="hero-phone-btn">
+            💬 WhatsApp
+          </a>
+        </div>
+      </div>
 
-    /* Блок телефона вверху */
-    .hero-phone-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+      <!-- Центр: заголовок, подзаголовок, бейджи, кнопки -->
+      <div class="hero-center-wrap">
+        <div class="hero-center">
+          <div class="hero-content">
+            <h1 class="hero-title" data-i18n="heroTitle">
+              הובלות ברמה אחרת
+            </h1>
 
-    .hero-phone-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.55);
-      border: 1px solid rgba(255,255,255,0.7);
-      font-size: 13px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.55);
-      white-space: nowrap;
-    }
+            <p class="hero-subtitle" data-i18n="heroSubtitle">
+              הובלות משפחתיות בכל הארץ — מהפריט הקטן ביותר ועד דירה מלאה,
+              בעדינות, ביושר ובזמן.
+            </p>
 
-    .hero-phone-pill strong {
-      font-weight: 700;
-      letter-spacing: 0.06em;
-    }
+            <div class="hero-badges">
+              <div class="hero-badge" data-i18n="badgeFamily">
+                צוות משפחתי ואדיב
+              </div>
+              <div class="hero-badge" data-i18n="badgeStorage">
+                עובדים עם מחסני אחסון
+              </div>
+              <div class="hero-badge" data-i18n="badgeLift">
+                מנוף הרמה לפי הצורך
+              </div>
+              <div class="hero-badge" data-i18n="badgeTruck">
+                משאית + נהג לפי שעה
+              </div>
+            </div>
 
-    .hero-phone-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      background: #25d366;
-      color: #fff;
-      font-size: 12px;
-      font-weight: 600;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-    }
+            <div class="hero-actions">
+              <a href="#contact"
+                 class="btn-primary"
+                 data-i18n="heroBtn">
+                השאר פרטים לקבלת הצעה
+              </a>
 
-    .hero-center-wrap {
-      flex: 1;
-      display: flex;
-      align-items: flex-end;
-    }
+              <a href="https://wa.me/972547524092?text=שלום%20אני%20מעוניין%20בהובלה"
+                 target="_blank" rel="noopener"
+                 class="btn-outline"
+                 data-i18n="heroWhatsAppBtn">
+                שיחה ב-WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    .hero-center {
-      flex: 1;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-    }
+      <!-- Низ: три пункта с точками -->
+      <div class="hero-bottom container">
+        <div class="hero-bottom-item">
+          <span class="hero-dot"></span>
+          <span data-i18n="heroBottom1">
+            הובלות קטנות ודירות בכל גודל
+          </span>
+        </div>
 
-    .hero-content {
-      width: 100%;
-      max-width: 520px;
-      margin: 0 auto 32px auto;
-      text-align: left;
-    }
+        <div class="hero-bottom-item">
+          <span class="hero-dot"></span>
+          <span data-i18n="heroBottom2">
+            שירות זמין וגמיש לפי הלקוח
+          </span>
+        </div>
 
-    .hero-title {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      margin: 0 0 10px;
-      text-transform: uppercase;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
-    }
+        <div class="hero-bottom-item">
+          <span class="hero-dot"></span>
+          <span data-i18n="heroBottom3">
+            שומרים על הרהיטים כאילו היו שלנו
+          </span>
+        </div>
+      </div>
 
-    .hero-subtitle {
-      font-size: 18px;
-      line-height: 1.45;
-      font-weight: 300;
-      margin: 6px 0 18px 0;
-      max-width: 440px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.65);
-    }
+    </div>
+  </header>
 
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 18px;
-      font-size: 11px;
-    }
-
-    .hero-badge {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: rgba(0,0,0,0.35);
-      border: 1px solid rgba(255,255,255,0.3);
-      text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .btn-primary,
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 12px 26px;
-      border-radius: 999px;
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      border: 1px solid #fff;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: #ffffff;
-      color: #222;
-      border-color: #ffffff;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.3);
-    }
-
-    .btn-primary:hover { background: #f3f3f3; }
-
-    .btn-outline {
-      background: transparent;
-      color: #ffffff;
-      border-color: rgba(255,255,255,0.86);
-    }
-
-    .btn-outline:hover { background: rgba(255,255,255,0.12); }
-
-    .hero-bottom {
-      max-width: 960px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 11px;
-      opacity: 0.92;
-    }
-
-    .hero-bottom-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .hero-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #fff;
-    }
-
+  <!-- NAVIGATION -->
+  <nav class="main-nav">
+    ...
     /* NAV */
     .main-nav {
       background: #ffffff;
