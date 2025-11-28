@@ -556,3 +556,109 @@ body.rtl .form-row {
     font-size: 1.1rem;
   }
 }
+/* ====== НОВЫЙ ГЛАВНЫЙ ЭКРАН ====== */
+
+.hero-new {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("images/IMG_5632.jpeg"); /* сюда твоя картинка с семьёй */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.hero-new-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-new-content {
+  position: relative;
+  padding: 1.5rem;
+  max-width: 600px;
+  direction: rtl;
+}
+
+.hero-new-logo {
+  max-width: 260px;
+  width: 70%;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.hero-new-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero-new-subtitle {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-new-phone {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-new-phone a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.hero-new-phone a:hover {
+  text-decoration: underline;
+}
+
+/* кнопки */
+.hero-new-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-new {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.btn-new-primary {
+  background: #0099ff;
+  border-color: #0099ff;
+  color: #ffffff;
+}
+
+.btn-new-outline {
+  background: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn-new:hover {
+  opacity: 0.9;
+}
+
+/* чуть крупнее на компьютере */
+@media (min-width: 768px) {
+  .hero-new-title {
+    font-size: 2.6rem;
+  }
+
+  .hero-new-subtitle {
+    font-size: 1.1rem;
+  }
+}
