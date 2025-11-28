@@ -83,18 +83,9 @@
       --text-muted: #555555;
       --accent: #c9864a;
       --accent-dark: #a66a32;
-      --hero-overlay-dark: rgba(0, 0, 0, 0.55);
-      --hero-overlay-light: rgba(0, 0, 0, 0.35);
       --radius-lg: 18px;
       --radius-md: 12px;
-      --radius-pill: 999px;
       --shadow-soft: 0 14px 35px rgba(0,0,0,0.18);
-    }
-
-    .ltr-number {
-      direction: ltr;
-      unicode-bidi: bidi-override;
-      display: inline-block;
     }
 
     * { box-sizing: border-box; }
@@ -118,217 +109,161 @@
 
     section { padding: 64px 0; }
 
-    /* Top bar */
-    .top-bar {
-      position: fixed;
-      z-index: 20;
-      top: 0;
-      left: 0;
+    .ltr-number {
+      direction: ltr;
+      unicode-bidi: bidi-override;
+      display: inline-block;
+    }
+
+    /* HERO */
+    header.hero {
+      position: relative;
+      height: 85vh;
+      min-height: 520px;
+      overflow: hidden;
+      color: #fff;
+    }
+    .hero-image img {
+      position: absolute;
+      inset: 0;
       width: 100%;
-      display: flex;
-      justify-content: center;
-      pointer-events: none;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      filter: brightness(82%) contrast(108%);
     }
-
-    .top-bar-inner {
-      margin-top: 14px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      backdrop-filter: blur(14px);
-      background: rgba(0,0,0,0.35);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      pointer-events: all;
-    }
-
-    .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      background: rgba(255,255,255,0.08);
-      border-radius: 999px;
-      padding: 2px;
-      gap: 4px;
-    }
-
-    .lang-btn {
-      border: none;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: transparent;
-      color: #fff;
-      font-size: 11px;
-      cursor: pointer;
-      opacity: 0.7;
-    }
-
-    .lang-btn.active {
-      background: rgba(255,255,255,0.9);
-      color: #222;
-      opacity: 1;
-      font-weight: 600;
-    }
-
-    .top-wa {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: rgba(37,211,102,0.95);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-    }
-
-    .top-wa-icon {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      border: 2px solid #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 11px;
-    }
-
- <body>
-  /* HERO */
-header.hero {
-    position: relative;
-    height: 85vh;
-    min-height: 520px;
-    overflow: hidden;
-    color: #fff;
-}
-
-/* Фон */
-.hero-image img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 20%;
-    filter: brightness(82%) contrast(108%);
-}
-
-/* Градиент */
-.hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
         to bottom,
         rgba(0,0,0,0.45),
         rgba(0,0,0,0.15)
-    );
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 32px 20px 48px;
-}
+      );
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 32px 20px 48px;
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      margin: 0 auto;
+      gap: 12px;
+    }
+    .hero-logo img {
+      height: 52px;
+      width: auto;
+    }
+    .hero-phone-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.4);
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      text-decoration: none;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    }
+    .hero-content {
+      width: 100%;
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 12px;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.7);
+    }
+    .hero-subtitle {
+      font-size: 18px;
+      line-height: 1.45;
+      font-weight: 300;
+      margin-bottom: 24px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-primary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 26px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid #fff;
+    }
+    .btn-primary {
+      background: #ffffff;
+      color: #222;
+      border-color: #fff;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.3);
+    }
+    .btn-primary:hover { background: #f3f3f3; }
+    .btn-outline {
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,0.85);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+    }
 
-/* Верхняя часть */
-.hero-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-    gap: 12px;
-}
+    /* NAV */
+    .main-nav {
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .main-nav-inner {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      padding: 10px 0;
+      font-size: 14px;
+    }
+    .nav-link {
+      cursor: pointer;
+      color: #555;
+    }
+    .nav-link:hover { color: #c9864a; }
 
-/* Логотип */
-.hero-logo {
-    font-family: "Playfair Display", serif;
-    font-size: 28px;
-    letter-spacing: 0.15em;
-    font-weight: 600;
-    text-shadow: 0 3px 6px rgba(0,0,0,0.5);
-    white-space: nowrap;
-}
+    .section-title {
+      font-size: 26px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .section-subtitle {
+      font-size: 15px;
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 24px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
 
-/* Телефон */
-.hero-phone-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    border-radius: 999px;
-    background: rgba(0,0,0,0.55);
-    border: 1px solid rgba(255,255,255,0.4);
-    font-size: 15px;
-    font-weight: 600;
-    color: #fff;
-    text-decoration: none;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-}
-
-/* Контент */
-.hero-content {
-    width: 100%;
-    max-width: 520px;
-    margin: 0 auto 0 auto;
-    text-align: center;
-}
-
-.hero-title {
-    font-family: "Playfair Display", serif;
-    font-size: 34px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    margin-bottom: 12px;
-    text-shadow: 0 3px 8px rgba(0,0,0,0.7);
-}
-
-.hero-subtitle {
-    font-size: 18px;
-    line-height: 1.45;
-    font-weight: 300;
-    margin-bottom: 24px;
-    text-shadow: 0 1px 4px rgba(0,0,0,0.6);
-}
-
-/* Кнопки */
-.btn-primary,
-.btn-outline {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 26px;
-    border-radius: 999px;
-    text-transform: uppercase;
-    font-size: 14px;
-    letter-spacing: 0.08em;
-    text-decoration: none;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid #fff;
-}
-
-.btn-primary {
-    background: #ffffff;
-    color: #222;
-    border-color: #fff;
-    box-shadow: 0 12px 28px rgba(0,0,0,0.3);
-}
-
-.btn-light:hover {
-    background: #f3f3f3;
-}
-
-.btn-outline {
-    background: transparent;
-    color: #fff;
-    border-color: rgba(255,255,255,0.85);
-}
-
-.btn-outline:hover {
-    background: rgba(255,255,255,0.15);
-}
     /* ABOUT */
     .about-layout {
       display: grid;
@@ -336,7 +271,6 @@ header.hero {
       gap: 32px;
       align-items: center;
     }
-
     .about-card {
       background: #ffffff;
       border-radius: var(--radius-lg);
@@ -344,13 +278,11 @@ header.hero {
       box-shadow: var(--shadow-soft);
       border: 1px solid #f1e2d3;
     }
-
     .about-text-main {
       font-size: 15px;
       line-height: 1.7;
       margin-bottom: 16px;
     }
-
     .about-list {
       list-style: none;
       padding: 0;
@@ -358,13 +290,11 @@ header.hero {
       font-size: 14px;
       color: var(--text-muted);
     }
-
     .about-list li {
       display: flex;
       gap: 8px;
       margin-bottom: 6px;
     }
-
     .about-list-bullet {
       width: 6px;
       height: 6px;
@@ -373,7 +303,6 @@ header.hero {
       margin-top: 7px;
       flex-shrink: 0;
     }
-
     .about-extra {
       font-size: 13px;
       color: #8a6a45;
@@ -384,7 +313,6 @@ header.hero {
       align-items: center;
       gap: 6px;
     }
-
     .about-image {
       border-radius: var(--radius-lg);
       overflow: hidden;
@@ -393,14 +321,12 @@ header.hero {
 
     /* Services */
     .section-alt { background-color: var(--bg-alt); }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
       margin-top: 24px;
     }
-
     .service-card {
       background: #ffffff;
       border-radius: var(--radius-md);
@@ -409,13 +335,11 @@ header.hero {
       border: 1px solid #f0e1d4;
       font-size: 14px;
     }
-
     .service-title {
       font-weight: 700;
       margin-bottom: 6px;
       font-size: 15px;
     }
-
     .service-text {
       color: var(--text-muted);
       line-height: 1.6;
@@ -428,7 +352,6 @@ header.hero {
       gap: 18px;
       margin-top: 24px;
     }
-
     .review-card {
       background: #ffffff;
       border-radius: var(--radius-md);
@@ -437,18 +360,15 @@ header.hero {
       border: 1px solid #f0e1d4;
       font-size: 14px;
     }
-
     .review-name {
       font-weight: 700;
       margin-bottom: 4px;
     }
-
     .review-city {
       font-size: 12px;
       color: var(--text-muted);
       margin-bottom: 10px;
     }
-
     .review-text {
       font-size: 13px;
       line-height: 1.6;
@@ -461,7 +381,6 @@ header.hero {
       gap: 28px;
       align-items: flex-start;
     }
-
     .contact-info-card {
       background: #ffffff;
       border-radius: var(--radius-lg);
@@ -470,21 +389,18 @@ header.hero {
       border: 1px solid #f1e2d3;
       font-size: 14px;
     }
-
     .contact-info-row {
       display: flex;
       gap: 10px;
       margin-bottom: 10px;
       align-items: center;
     }
-
     .contact-badge {
       background: #fff5e9;
       border-radius: 999px;
       padding: 4px 10px;
       font-size: 12px;
     }
-
     .contact-form-card {
       background: #ffffff;
       border-radius: var(--radius-lg);
@@ -492,22 +408,18 @@ header.hero {
       box-shadow: var(--shadow-soft);
       border: 1px solid #f1e2d3;
     }
-
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
     }
-
     .form-group {
       display: flex;
       flex-direction: column;
       gap: 4px;
       font-size: 13px;
     }
-
     label { font-weight: 600; }
-
     input[type="text"],
     input[type="tel"],
     input[type="date"],
@@ -521,19 +433,16 @@ header.hero {
       transition: border-color 0.2s ease, box-shadow 0.2s ease;
       background: #fcfcfb;
     }
-
     textarea {
       resize: vertical;
       min-height: 90px;
     }
-
     input:focus,
     textarea:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px rgba(201,134,74,0.2);
       background: #ffffff;
     }
-
     .form-footer {
       margin-top: 14px;
       display: flex;
@@ -542,26 +451,22 @@ header.hero {
       gap: 10px;
       justify-content: space-between;
     }
-
     .form-note {
       font-size: 12px;
       color: var(--text-muted);
     }
-
     .form-success {
       display: none;
       margin-top: 10px;
       font-size: 13px;
       color: #1b8c3f;
     }
-
     .form-error {
       display: none;
       margin-top: 10px;
       font-size: 13px;
       color: #c0392b;
     }
-
     .btn-submit {
       border: none;
       padding: 11px 24px;
@@ -577,7 +482,6 @@ header.hero {
       gap: 6px;
       box-shadow: 0 10px 22px rgba(0,0,0,0.18);
     }
-
     .btn-submit:hover { background: var(--accent-dark); }
 
     /* FOOTER */
@@ -587,22 +491,19 @@ header.hero {
       font-size: 12px;
       color: var(--text-muted);
     }
-
     .footer-inner {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      justify-content: space-between;
+      justify-content: space_between;
       align-items: center;
     }
-
     .footer-contact {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
       align-items: center;
     }
-
     .footer-wa {
       display: inline-flex;
       align-items: center;
@@ -620,34 +521,20 @@ header.hero {
         height: auto;
         min-height: 540px;
       }
-
       .hero-overlay {
         padding-top: 72px;
         padding-bottom: 22px;
       }
-
       .hero-content { margin-bottom: 20px; }
-
       .about-layout,
       .services-grid,
       .reviews-grid,
       .contact-layout {
         grid-template-columns: minmax(0,1fr);
       }
-
       .services-grid,
       .reviews-grid {
         gap: 14px;
-      }
-
-      .main-nav-inner {
-        flex-wrap: wrap;
-        gap: 16px;
-      }
-
-      .hero-phone-wrapper {
-        flex-direction: column;
-        align-items: flex-end;
       }
     }
 
@@ -656,74 +543,62 @@ header.hero {
         flex-direction: column;
         align-items: flex-start;
       }
-
-      .hero-logo { font-size: 19px; }
       .hero-title { font-size: 24px; }
       .hero-subtitle { font-size: 16px; }
-
       .hero-actions {
         flex-direction: column;
         align-items: stretch;
       }
-
-      .hero-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-
       .about-card,
       .contact-form-card,
       .contact-info-card {
         padding: 18px 16px 16px;
       }
-
       .form-grid {
         grid-template-columns: minmax(0,1fr);
       }
-
       section { padding: 52px 0; }
     }
   </style>
 </head>
 
 <body>
-<header class="hero" id="top">
-  <div class="hero-overlay"></div>
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-image">
+      <!-- Поставь сюда нужную фотографию фона -->
+      <img src="images/hero-family.jpg" alt="משפחה עוברת דירה עם Move4U">
+    </div>
 
-  <body>
-  <!-- НОВЫЙ ГЛАВНЫЙ ЭКРАН -->
-  <header class="hero-new" id="top">
-    <div class="hero-new-overlay"></div>
-
-    <div class="hero-new-content">
-      <!-- ЛОГОТИП -->
-      <img src="images/logo-move4u.png" alt="Move4U לוגו" class="hero-new-logo">
-
-      <!-- ТЕКСТ -->
-      <h1 class="hero-new-title">הובלות ברמה אחרת</h1>
-      <p class="hero-new-subtitle">
-        הובלות משפחתיות בכל הארץ — מהפריט הקטן ביותר ועד דירה מלאה, בעדינות, ביושר ובזמן.
-      </p>
-
-      <!-- ТЕЛЕФОН -->
-      <div class="hero-new-phone">
-        📞 <a href="tel:+972547524092">+972 547 524 092</a>
+    <div class="hero-overlay">
+      <div class="hero-top container">
+        <div class="hero-logo">
+          <img src="images/logo-move4u.png" alt="Move4U לוגו">
+        </div>
+        <a href="tel:+972547524092" class="hero-phone-pill">
+          📞 <span class="ltr-number">+972 54 752 4092</span>
+        </a>
       </div>
 
-      <!-- КНОПКИ -->
-      <div class="hero-new-buttons">
-        <a href="tel:+972547524092" class="btn-new btn-new-primary">
-          התקשר עכשיו
-        </a>
-        <a href="https://wa.me/972547524092?text=שלום%20אני%20מעוניין%20בהובלה"
-           class="btn-new btn-new-outline" target="_blank" rel="noopener">
-          הודעת WhatsApp
-        </a>
+      <div class="hero-content">
+        <h1 class="hero-title" data-i18n="heroTitle">הובלות ברמה אחרת</h1>
+        <p class="hero-subtitle" data-i18n="heroSubtitle">
+          הובלות משפחתיות בכל הארץ — מהפריט הקטן ביותר ועד דירה מלאה, בעדינות, ביושר ובזמן.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#contact" class="btn-primary" data-i18n="heroBtn">
+            השאר פרטים לקבלת הצעה
+          </a>
+          <a href="https://wa.me/972547524092?text=שלום%20אני%20מעוניין%20בהובלה"
+             class="btn-outline" target="_blank" rel="noopener" data-i18n="heroWhatsAppBtn">
+            שיחה ב-WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </header>
-  
+
   <!-- NAVIGATION -->
   <nav class="main-nav">
     <div class="main-nav-inner container">
@@ -884,7 +759,7 @@ header.hero {
   </section>
 
   <!-- TRUCK BY HOUR -->
-  <section id="truck-by-hour" class="service-block section-alt">
+  <section id="truck-by-hour" class="section-alt">
     <div class="container">
       <h2 class="section-title" data-i18n="truckTitle">
         השכרת משאית לפי שעה בגוש דן – Move4U
@@ -1068,11 +943,10 @@ header.hero {
         })
           .then(function (response) {
             if (response.ok) {
-             // Конверсия Google Ads – Лид с формы сайта
-gtag('event', 'conversion', {
-  'send_to': 'AW-17750097271/07K-CKuWhcgbEPf6849C'
-});
-
+              // Конверсия Google Ads – Лид с формы сайта
+              gtag('event', 'conversion', {
+                'send_to': 'AW-17750097271/07K-CKuWhcgbEPf6849C'
+              });
 
               if (successEl) successEl.style.display = "block";
               form.reset();
@@ -1098,31 +972,20 @@ gtag('event', 'conversion', {
       });
     });
 
-    // Языки
+    // Переводы (пока только иврит, как в твоём коде)
     const translations = {
-      /* ---- сюда вставлен твой объект translations he / ru / en,
-         полностью такой же как у тебя был, я его не изменял кроме добавления
-         ключа heroWhatsAppBtnTop при необходимости ---- */
       he: {
         brand: "MOVE4U",
         topWhatsApp: "וואטסאפ",
         heroTitle: "הובלות ברמה אחרת",
         heroSubtitle:
           "הובלות משפחתיות בכל הארץ — מהפריט הקטן ביותר ועד דירה מלאה, בעדינות, ביושר ובזמן.",
-        badgeFamily: "צוות משפחתי ואדיב",
-        badgeStorage: "עובדים עם מחסני אחסון",
-        badgeLift: "מנוף הרמה לפי הצורך",
         heroBtn: "השאר פרטים לקבלת הצעה",
         heroWhatsAppBtn: "שיחה ב-WhatsApp",
-        heroWhatsAppBtnTop: "וואטסאפ",
-        heroBottom1: "הובלות קטנות ודירות בכל גודל",
-        heroBottom2: "שירות זמין וגמיש לפי הלקוח",
-        heroBottom3: "שומרים על הרהיטים כאילו היו שלנו",
         navAbout: "עלינו",
         navServices: "שירותים",
         navReviews: "המלצות",
         navContact: "צור קשר",
-        badgeTruck: "משאית + נהג לפי שעה",
         aboutTitle: "קצת על Move4U",
         aboutSubtitle:
           "חברת הובלות משפחתית, שפשוט עושה את העבודה כמו שצריך – בלי רעש מיותר, בלי כאב ראש, עם חיוך ועם אחריות מלאה על כל פריט.",
@@ -1221,46 +1084,25 @@ gtag('event', 'conversion', {
         truckInc3: "אפשרות להוסיף סבלים בתוספת תשלום",
         truckInc4: "תמחור הוגן ושקוף",
         truckInc5: "שירות מהיום להיום לפי זמינות"
-      },
-      /* ru и en – те же, что у тебя были, я их опустил здесь,
-         но в своём файле можешь оставить полностью */
+      }
     };
 
     function applyLanguage(lang) {
       const dict = translations[lang] || translations["he"];
-
       document.documentElement.lang = lang === "he" ? "he" : lang;
       document.documentElement.dir = lang === "he" ? "rtl" : "ltr";
 
       document.querySelectorAll("[data-i18n]").forEach(function (el) {
         const key = el.getAttribute("data-i18n");
-        if (dict[key]) {
-          el.textContent = dict[key];
-        }
+        if (dict[key]) el.textContent = dict[key];
       });
-
-      document
-        .querySelectorAll("[data-i18n-placeholder]")
-        .forEach(function (el) {
-          const key = el.getAttribute("data-i18n-placeholder");
-          if (dict[key]) {
-            el.placeholder = dict[key];
-          }
-        });
-
-      document.querySelectorAll("[data-lang-btn]").forEach(function (btn) {
-        btn.classList.toggle("active", btn.getAttribute("data-lang-btn") === lang);
+      document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
+        const key = el.getAttribute("data-i18n-placeholder");
+        if (dict[key]) el.placeholder = dict[key];
       });
     }
 
-    document.querySelectorAll("[data-lang-btn]").forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        const lang = btn.getAttribute("data-lang-btn");
-        applyLanguage(lang);
-      });
-    });
-
-    // Язык по умолчанию – иврит
+    // язык по умолчанию – иврит
     applyLanguage("he");
   </script>
 </body>
