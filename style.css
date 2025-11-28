@@ -448,3 +448,111 @@ body.rtl .form-row {
   color: #000000;
   font-weight: 600;
 }
+/* ГЛАВНЫЙ ЭКРАН С СЕМЬЁЙ */
+.hero {
+  position: relative;
+  min-height: 90vh; /* почти весь экран */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("images/hero-family.jpg"); /* фото семьи */
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+/* тёмный прозрачный слой, чтобы текст читался на фото */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+  position: relative;
+  padding: 1.5rem;
+  max-width: 600px;
+  direction: rtl;
+}
+
+.hero-logo {
+  max-width: 260px;
+  width: 70%;
+  margin: 0 auto 1rem auto;
+  display: block;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero-phone {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.hero-phone a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.hero-phone a:hover {
+  text-decoration: underline;
+}
+
+/* КНОПКИ */
+.hero-buttons {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/* основная кнопка - звонок */
+.btn-primary {
+  background: #0099ff;
+  border-color: #0099ff;
+  color: #ffffff;
+}
+
+/* вторичная кнопка - WhatsApp */
+.btn-outline {
+  background: transparent;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Чуть крупнее шрифт на компьютере */
+@media (min-width: 768px) {
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+}
