@@ -679,4 +679,7 @@ body.rtl .form-row {
   height: auto;
   filter: drop-shadow(0 10px 25px rgba(0,0,0,0.35)); /* лёгкая тень под логотипом */
 }
+.hero-main-logo {
+  display: none;
+}
 
