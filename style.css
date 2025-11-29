@@ -544,7 +544,7 @@ footer {
   max-width: 80vw;
   height: auto;
   filter: drop-shadow(0 10px 25px rgba(0,0,0,0.35));
-    margin-left: 40px; /* 👉 Двигает изображение вправо */
+    margin-left: 40px;  
 }
 
 /* АДАПТИВ */
