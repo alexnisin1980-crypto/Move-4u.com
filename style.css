@@ -662,3 +662,16 @@ body.rtl .form-row {
     font-size: 1.1rem;
   }
 }
+.center-logo {
+    position: absolute;
+    top: 40px; /* опусти или подними как хочешь */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.center-logo img {
+    width: 320px; /* УВЕЛИЧИВАЕМ РАЗМЕР */
+    height: auto;
+}
