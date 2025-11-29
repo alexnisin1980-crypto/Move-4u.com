@@ -664,7 +664,7 @@ body.rtl .form-row {
 }
 .center-logo {
   position: absolute;
-  top: 100px;              /* подними/опусти шапку, как тебе удобно */
+  top: -30px;              /* подними/опусти шапку, как тебе удобно */
   left: 0;
   width: 100%;
   display: flex;
