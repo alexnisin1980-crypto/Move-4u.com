@@ -529,9 +529,9 @@ footer {
 /* ЦЕНТРАЛЬНЫЙ ЛОГОТИП СВЕРХУ */
 
 .center-logo {
-  position: fixed;         /* всегда прилипает к верху экрана */
+  position: absolute;         /* всегда прилипает к верху экрана */
   top: -22px;
-  left: -440;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
