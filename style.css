@@ -592,14 +592,4 @@ footer {
     grid-template-columns: minmax(0,1fr);
   }
 }
-.center-logo {
-  position: relative;
-  top: -60px;      /* поднимает логотип вверх */
-  text-align: center;
-  z-index: 200;
-}
 
-.center-logo img {
-  width: 260px;    /* размер логотипа */
-  height: auto;
-}
