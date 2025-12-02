@@ -530,7 +530,7 @@ footer {
 
 .center-logo {
   position: absolute;         /* всегда прилипает к верху экрана */
-  top: 10px;
+  top: 20px;
   left: 0;
   width: 100%;
   display: flex;
